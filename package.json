@@ -13,6 +13,7 @@
     "@astrojs/netlify": "^6.6.0",
     "@astrojs/react": "^4.4.2",
     "@hookform/resolvers": "^5.2.2",
+    "@supabase/supabase-js": "^2.81.1",
     "@tailwindcss/vite": "^4.1.17",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",

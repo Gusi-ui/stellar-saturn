@@ -56,7 +56,16 @@ Este proyecto está configurado para desplegarse en **Netlify**, aunque también
 
 ### Despliegue en Netlify (Recomendado)
 
-El proyecto incluye configuración lista para Netlify:
+El proyecto incluye configuración lista para Netlify y está optimizado para el **plan gratuito**.
+
+#### Límites del Plan Gratuito de Netlify:
+- ✅ **300 minutos de build/mes** - Suficiente para ~10-15 despliegues al mes
+- ✅ **100GB de bandwidth/mes** - Más que suficiente para un sitio de asociación
+- ✅ **Funciones serverless** - Timeout de 10 segundos (suficiente para nuestro endpoint)
+- ✅ **Variables de entorno** - Ilimitadas
+- ✅ **Despliegues automáticos** - Ilimitados
+
+#### Pasos para desplegar:
 
 1. **Conecta tu repositorio a Netlify:**
    - Ve a [Netlify](https://app.netlify.com)
@@ -68,14 +77,35 @@ El proyecto incluye configuración lista para Netlify:
    - Publish directory: `dist`
    - Node version: `20` (configurado automáticamente)
 
-3. **Variables de entorno (opcional):**
-   Si necesitas configurar variables de entorno para el endpoint API (por ejemplo, para integración con servicios externos), puedes agregarlas en la configuración de Netlify:
-   - Ve a Site settings → Environment variables
-   - Agrega las variables necesarias
+3. **Variables de entorno (requeridas para Supabase):**
+   - Ve a **Site settings** → **Environment variables**
+   - Agrega las siguientes variables:
+     ```
+     PUBLIC_SUPABASE_URL=https://tu-proyecto.supabase.co
+     SUPABASE_SERVICE_ROLE_KEY=tu-service-role-key-aqui
+     ```
+   - ⚠️ **Importante**: Configura estas variables ANTES del primer despliegue
 
 4. **Despliegue automático:**
    - Cada push a la rama `main` desplegará automáticamente
    - Los Pull Requests generarán preview deployments
+   - Los builds suelen tardar 1-2 minutos
+
+#### Optimizaciones para el Plan Gratuito:
+
+- ✅ **Cache de assets**: Configurado para maximizar el uso del CDN
+- ✅ **Build optimizado**: Solo genera lo necesario
+- ✅ **Funciones serverless eficientes**: Sin sesiones persistentes ni auto-refresh
+- ✅ **Headers de seguridad**: Configurados para mejor rendimiento
+
+#### Monitoreo del Uso:
+
+Puedes monitorear tu uso en **Team settings** → **Usage**:
+- Build minutes utilizados
+- Bandwidth consumido
+- Funciones invocadas
+
+Si necesitas más recursos, Netlify ofrece planes de pago muy accesibles.
 
 ### Despliegue en Vercel
 
@@ -90,15 +120,71 @@ El proyecto incluye configuración lista para Netlify:
 3. Build output directory: `dist`
 4. Para API routes, considera usar `@astrojs/cloudflare` adapter
 
-### Notas sobre el Endpoint API
+### Configuración de Base de Datos (Supabase)
 
-El endpoint `/api/submit-registration` está configurado como función serverless. Actualmente simula el procesamiento. Para producción, necesitarás:
+El proyecto está configurado para usar **Supabase** como base de datos para almacenar las inscripciones del formulario.
 
-- Integrar con una base de datos (Supabase, Firebase, etc.)
-- Configurar servicio de email (Resend, SendGrid, etc.)
-- O integrar con Google Sheets API
+#### Pasos para configurar Supabase:
 
-Consulta el archivo `src/pages/api/submit-registration.json.ts` para más detalles.
+1. **Crear cuenta en Supabase:**
+   - Ve a [supabase.com](https://supabase.com) y crea una cuenta gratuita
+   - Crea un nuevo proyecto
+
+2. **Configurar la base de datos:**
+   - En el dashboard de Supabase, ve a **SQL Editor**
+   - Ejecuta el script SQL del archivo `supabase-schema.sql` que crea la tabla `registrations`
+
+3. **Obtener las credenciales:**
+   - Ve a **Settings** → **API**
+   - Copia la **Project URL** (será tu `PUBLIC_SUPABASE_URL`)
+   - Copia la **service_role** key (será tu `SUPABASE_SERVICE_ROLE_KEY`)
+   - ⚠️ **IMPORTANTE**: La service_role key tiene permisos completos, nunca la expongas en el cliente
+
+4. **Configurar variables de entorno:**
+
+   **En Netlify:**
+   - Ve a tu sitio en Netlify → **Site settings** → **Environment variables**
+   - Agrega las siguientes variables:
+     ```
+     PUBLIC_SUPABASE_URL=https://tu-proyecto.supabase.co
+     SUPABASE_SERVICE_ROLE_KEY=tu-service-role-key-aqui
+     ```
+
+   **Para desarrollo local:**
+   - Crea un archivo `.env` en la raíz del proyecto:
+     ```
+     PUBLIC_SUPABASE_URL=https://tu-proyecto.supabase.co
+     SUPABASE_SERVICE_ROLE_KEY=tu-service-role-key-aqui
+     ```
+   - ⚠️ **No subas el archivo `.env` al repositorio** (ya está en `.gitignore`)
+
+5. **Verificar la configuración:**
+   - Despliega los cambios en Netlify
+   - Prueba el formulario de inscripción
+   - Verifica en Supabase → **Table Editor** → `registrations` que los datos se están guardando
+
+#### Estructura de la Base de Datos
+
+La tabla `registrations` almacena:
+- `id`: UUID único del registro
+- `full_name`: Nombre completo
+- `email`: Correo electrónico (único)
+- `phone`: Teléfono de contacto
+- `functional_diversity`: Tipo de diversidad funcional
+- `relationship`: Relación con la asociación
+- `newsletter`: Consentimiento para newsletter
+- `consent`: Consentimiento para tratamiento de datos
+- `created_at`: Fecha de creación
+- `updated_at`: Fecha de última actualización
+
+#### Próximas mejoras sugeridas:
+
+- **Envío de emails de confirmación** (usando Resend, SendGrid, etc.)
+- **Notificaciones por WhatsApp** cuando llegue una nueva inscripción
+- **Panel de administración** para ver y gestionar las inscripciones
+- **Integración con Google Sheets** para exportar datos
+
+Consulta los archivos `src/pages/api/submit-registration.json.ts` y `supabase-schema.sql` para más detalles.
 
 ## 📁 Estructura del Proyecto
 
@@ -113,6 +199,7 @@ stellar-saturn/
 │   │   ├── Navigation.astro
 │   │   ├── Footer.astro
 │   │   ├── ThemeToggle.tsx
+│   │   ├── RegistrationForm.tsx
 │   │   └── ...
 │   ├── layouts/         # Layouts de página
 │   │   └── BaseLayout.astro
@@ -121,11 +208,18 @@ stellar-saturn/
 │   │   ├── quienes-somos.astro
 │   │   ├── servicios.astro
 │   │   ├── contacto.astro
+│   │   ├── api/        # Endpoints API
+│   │   │   └── submit-registration.json.ts
 │   │   └── blog/
+│   ├── lib/            # Utilidades y librerías
+│   │   └── supabase.ts # Cliente de Supabase
 │   ├── content/        # Contenido en Markdown
 │   │   └── blog/
 │   └── styles/         # Estilos globales
 │       └── global.css
+├── supabase-schema.sql # Esquema SQL para la base de datos
+├── netlify.toml         # Configuración de Netlify
+├── astro.config.mjs     # Configuración de Astro
 └── package.json
 ```
 

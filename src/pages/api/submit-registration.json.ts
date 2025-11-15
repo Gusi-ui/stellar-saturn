@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { supabase, type RegistrationData } from '../../lib/supabase';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -62,30 +63,69 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Here you would typically:
-    // 1. Save to database
-    // 2. Send confirmation email
-    // 3. Add to Google Sheets
-    // 4. Send WhatsApp notification
-    
-    // For now, we'll simulate a successful submission
-    console.log('Registration data received:', {
-      fullName: data.fullName,
-      email: data.email,
-      phone: data.phone,
-      functionalDiversity: data.functionalDiversity || 'No especificado',
+    // Preparar datos para la base de datos
+    const registrationData: RegistrationData = {
+      full_name: data.fullName.trim(),
+      email: data.email.toLowerCase().trim(),
+      phone: data.phone.trim(),
+      functional_diversity: data.functionalDiversity || null,
       relationship: data.relationship,
       newsletter: data.newsletter || false,
-      timestamp: new Date().toISOString()
+      consent: data.consent
+    };
+
+    // Guardar en Supabase
+    const { data: insertedData, error: dbError } = await supabase
+      .from('registrations')
+      .insert([registrationData])
+      .select()
+      .single();
+
+    if (dbError) {
+      console.error('Error al guardar en la base de datos:', dbError);
+      
+      // Verificar si es un error de duplicado (email ya existe)
+      if (dbError.code === '23505') {
+        return new Response(
+          JSON.stringify({ 
+            error: 'Ya existe una inscripción con este correo electrónico',
+            fields: ['email']
+          }), 
+          { 
+            status: 409,
+            headers: { 'Content-Type': 'application/json' }
+          }
+        );
+      }
+
+      return new Response(
+        JSON.stringify({ 
+          error: 'Error al procesar la inscripción. Por favor, inténtalo de nuevo más tarde.'
+        }), 
+        { 
+          status: 500,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      );
+    }
+
+    // Log exitoso (sin datos sensibles)
+    console.log('Registro guardado exitosamente:', {
+      id: insertedData.id,
+      email: insertedData.email,
+      timestamp: insertedData.created_at
     });
 
-    // Simulate processing time
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Aquí podrías agregar:
+    // 1. Envío de email de confirmación (usando Resend, SendGrid, etc.)
+    // 2. Notificación por WhatsApp
+    // 3. Integración con Google Sheets si es necesario
 
     return new Response(
       JSON.stringify({ 
         success: true,
-        message: 'Inscripción recibida correctamente. Nos pondremos en contacto contigo pronto.'
+        message: 'Inscripción recibida correctamente. Nos pondremos en contacto contigo pronto.',
+        id: insertedData.id
       }), 
       {
         status: 200,
