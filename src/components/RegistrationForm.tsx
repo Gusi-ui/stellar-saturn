@@ -42,11 +42,13 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('/api/submit-registration', {
+      const response = await fetch('/api/submit-registration.json', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+      
+      const responseData = await response.json();
       
       if (response.ok) {
         setSubmitStatus('success');
@@ -58,6 +60,8 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
           window.location.href = '/gracias-por-inscribirte';
         }, 3000);
       } else {
+        // Mostrar el error específico del servidor
+        console.error('Error del servidor:', responseData);
         setSubmitStatus('error');
       }
     } catch (error) {

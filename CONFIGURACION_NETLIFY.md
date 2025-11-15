@@ -1,5 +1,11 @@
 # Guía de Configuración de Netlify con Supabase
 
+## ⚠️ IMPORTANTE: Variables a Nivel de SITIO (Plan Gratuito)
+
+En el plan gratuito de Netlify, debes configurar las variables de entorno **a nivel de SITIO**, no a nivel de equipo.
+
+---
+
 ## Paso 1: Obtener las Credenciales de Supabase
 
 1. Ve a tu proyecto en [Supabase Dashboard](https://app.supabase.com)
@@ -21,20 +27,26 @@
 
 ---
 
-## Paso 2: Configurar Variables de Entorno en Netlify
+## Paso 2: Configurar Variables de Entorno en Netlify (Nivel de SITIO)
+
+### ⚠️ NO uses "Team settings" - Usa "Site settings"
 
 1. Ve a tu sitio en [Netlify Dashboard](https://app.netlify.com)
-2. Selecciona tu sitio (si tienes varios, elige el correcto)
-3. Ve a **Site settings** (en el menú superior)
-4. En el menú lateral izquierdo, busca y haz clic en **Environment variables**
-5. Haz clic en el botón **"Add a variable"** o **"Add variable"**
+2. **Selecciona tu sitio específico** (haz clic en el nombre del sitio)
+3. En el menú superior del sitio, haz clic en **"Site settings"** (no "Team settings")
+4. En el menú lateral izquierdo, busca y haz clic en **"Environment variables"**
+5. Verás una sección que dice **"Environment variables for this site"**
+6. Haz clic en el botón **"Add a variable"** o **"Add variable"**
 
 ### Agregar Primera Variable: PUBLIC_SUPABASE_URL
 
 - **Key**: `PUBLIC_SUPABASE_URL`
 - **Value**: Pega la Project URL que copiaste de Supabase
   - Ejemplo: `https://xxxxxxxxxxxxx.supabase.co`
-- **Scopes**: Deja marcado "All scopes" (o selecciona "Production", "Deploy previews", "Branch deploys" según necesites)
+- **Scopes**: 
+  - ✅ Marca "Production"
+  - ✅ Marca "Deploy previews" (opcional pero recomendado)
+  - ✅ Marca "Branch deploys" (opcional pero recomendado)
 - Haz clic en **"Save"**
 
 ### Agregar Segunda Variable: SUPABASE_SERVICE_ROLE_KEY
@@ -43,14 +55,19 @@
 - **Key**: `SUPABASE_SERVICE_ROLE_KEY`
 - **Value**: Pega la service_role key que copiaste de Supabase
   - Ejemplo: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` (cadena muy larga)
-- **Scopes**: Deja marcado "All scopes"
+- **Scopes**: 
+  - ✅ Marca "Production"
+  - ✅ Marca "Deploy previews" (opcional pero recomendado)
+  - ✅ Marca "Branch deploys" (opcional pero recomendado)
 - Haz clic en **"Save"**
 
 ### Verificar las Variables
 
-Deberías ver ahora dos variables en la lista:
+Deberías ver ahora dos variables en la sección **"Environment variables for this site"**:
 - ✅ `PUBLIC_SUPABASE_URL`
 - ✅ `SUPABASE_SERVICE_ROLE_KEY`
+
+**NOTA**: Si ves un mensaje sobre "shared environment variables" o "paid plans", estás en la sección incorrecta. Asegúrate de estar en **"Site settings"** → **"Environment variables"**, no en "Team settings".
 
 ---
 
@@ -58,7 +75,7 @@ Deberías ver ahora dos variables en la lista:
 
 Si ya tienes el sitio desplegado:
 
-1. Ve a **Deploys** en el menú superior
+1. Ve a la pestaña **"Deploys"** en el menú superior del sitio
 2. Haz clic en **"Trigger deploy"** → **"Deploy site"**
    - Esto redeployará el sitio con las nuevas variables de entorno
 
@@ -82,6 +99,16 @@ Si aún no has desplegado:
 
 ## Solución de Problemas
 
+### Error: "This feature is available on paid plans"
+
+**Causa**: Estás intentando configurar variables compartidas a nivel de equipo.
+
+**Solución**:
+- Asegúrate de estar en **"Site settings"** (no "Team settings")
+- Selecciona tu sitio específico primero
+- Ve a Site settings → Environment variables
+- Deberías ver "Environment variables for this site" (no "shared environment variables")
+
 ### Error: "Faltan las variables de entorno de Supabase"
 
 **Causa**: Las variables no están configuradas o tienen nombres incorrectos.
@@ -91,6 +118,7 @@ Si aún no has desplegado:
   - `PUBLIC_SUPABASE_URL` (con guiones bajos, no guiones)
   - `SUPABASE_SERVICE_ROLE_KEY` (con guiones bajos, mayúsculas)
 - Asegúrate de que los valores estén completos (sin espacios al inicio/final)
+- Verifica que estén configuradas en "Site settings", no "Team settings"
 - Haz un nuevo deploy después de agregar las variables
 
 ### Error: "Invalid API key" o "JWT expired"
@@ -100,7 +128,7 @@ Si aún no has desplegado:
 **Solución**:
 - Ve a Supabase → Settings → API
 - Copia nuevamente la service_role key
-- Actualiza la variable en Netlify
+- Actualiza la variable en Netlify (Site settings)
 - Haz un nuevo deploy
 
 ### El formulario se envía pero no se guarda en Supabase
@@ -124,7 +152,8 @@ Si aún no has desplegado:
 
 ## Checklist Final
 
-- [ ] Variables de entorno configuradas en Netlify
+- [ ] Variables configuradas en **Site settings** (no Team settings)
+- [ ] Dos variables agregadas: `PUBLIC_SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY`
 - [ ] Deploy completado exitosamente
 - [ ] Formulario de prueba enviado
 - [ ] Datos visibles en Supabase Table Editor
@@ -132,11 +161,25 @@ Si aún no has desplegado:
 
 ---
 
+## Diferencias entre Site settings y Team settings
+
+- **Site settings** → **Environment variables**: ✅ Disponible en plan gratuito
+  - Variables específicas para un sitio
+  - Se configuran por sitio individual
+  
+- **Team settings** → **Environment variables**: ❌ Solo en planes de pago
+  - Variables compartidas para todos los sitios del equipo
+  - Requiere upgrade
+
+**Siempre usa Site settings para el plan gratuito.**
+
+---
+
 ## ¿Necesitas Ayuda?
 
 Si encuentras algún problema:
 1. Revisa los logs de Netlify (Deploys → Functions logs)
-2. Verifica que las variables estén correctamente escritas
-3. Asegúrate de haber usado la **service_role** key, no la **anon** key
-4. Verifica que la tabla `registrations` existe en Supabase
-
+2. Verifica que las variables estén en **Site settings**, no Team settings
+3. Verifica que los nombres de las variables sean exactos
+4. Asegúrate de haber usado la **service_role** key, no la **anon** key
+5. Verifica que la tabla `registrations` existe en Supabase
