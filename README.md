@@ -50,6 +50,56 @@ El sitio estará disponible en `http://localhost:4321`
 | `npm run preview`      | Vista previa del build antes de deployar       |
 | `npm run astro ...`    | Ejecuta comandos de Astro CLI                  |
 
+## 🌐 Despliegue
+
+Este proyecto está configurado para desplegarse en **Netlify**, aunque también es compatible con otras plataformas como Vercel o Cloudflare Pages.
+
+### Despliegue en Netlify (Recomendado)
+
+El proyecto incluye configuración lista para Netlify:
+
+1. **Conecta tu repositorio a Netlify:**
+   - Ve a [Netlify](https://app.netlify.com)
+   - Conecta tu repositorio de GitHub/GitLab
+   - Netlify detectará automáticamente la configuración
+
+2. **Configuración automática:**
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - Node version: `20` (configurado automáticamente)
+
+3. **Variables de entorno (opcional):**
+   Si necesitas configurar variables de entorno para el endpoint API (por ejemplo, para integración con servicios externos), puedes agregarlas en la configuración de Netlify:
+   - Ve a Site settings → Environment variables
+   - Agrega las variables necesarias
+
+4. **Despliegue automático:**
+   - Cada push a la rama `main` desplegará automáticamente
+   - Los Pull Requests generarán preview deployments
+
+### Despliegue en Vercel
+
+1. Conecta tu repositorio en [Vercel](https://vercel.com)
+2. Vercel detectará automáticamente Astro
+3. El adaptador de Netlify puede funcionar, pero se recomienda usar `@astrojs/vercel` para mejor integración
+
+### Despliegue en Cloudflare Pages
+
+1. Conecta tu repositorio en [Cloudflare Pages](https://pages.cloudflare.com)
+2. Build command: `npm run build`
+3. Build output directory: `dist`
+4. Para API routes, considera usar `@astrojs/cloudflare` adapter
+
+### Notas sobre el Endpoint API
+
+El endpoint `/api/submit-registration` está configurado como función serverless. Actualmente simula el procesamiento. Para producción, necesitarás:
+
+- Integrar con una base de datos (Supabase, Firebase, etc.)
+- Configurar servicio de email (Resend, SendGrid, etc.)
+- O integrar con Google Sheets API
+
+Consulta el archivo `src/pages/api/submit-registration.json.ts` para más detalles.
+
 ## 📁 Estructura del Proyecto
 
 ```
