@@ -1,0 +1,121 @@
+---
+import { Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const testimonials = [
+  {
+    name: "María García",
+    role: "Madre de familia",
+    content: "DiverMataró ha sido fundamental para el desarrollo de mi hijo. Los talleres y actividades le han dado confianza y autonomía. El equipo es maravilloso y muy profesional.",
+    rating: 5,
+    image: null
+  },
+  {
+    name: "Fabi",
+    role: "Miembro activo",
+    content: "DiverMataró ha cambiado mi vida completamente. He aprendido nuevas habilidades, hecho grandes amigos y ahora me siento más seguro y feliz. ¡Es mi segunda familia!",
+    rating: 5,
+    image: null
+  },
+  {
+    name: "Ana Martínez",
+    role: "Voluntaria",
+    content: "Como voluntaria, veo el impacto positivo que tiene la asociación en la vida de las personas. El compromiso y dedicación del equipo es admirable. ¡Es una experiencia enriquecedora!",
+    rating: 5,
+    image: null
+  }
+];
+---
+
+<section class="py-32 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <div class="inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 rounded-full mb-6 shadow-lg">
+        <Quote className="w-5 h-5 text-blue-600 mr-2" />
+        <span class="text-sm font-semibold text-blue-700 dark:text-blue-300">Testimonios</span>
+      </div>
+      
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+        Lo que dicen de nosotros
+      </h2>
+      
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Las experiencias de las personas que forman parte de nuestra comunidad hablan por sí solas.
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div 
+          class="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          <!-- Quote Icon -->
+          <div class="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+            <Quote className="w-6 h-6 text-white" />
+          </div>
+          
+          <!-- Rating -->
+          <div class="flex mb-6">
+            {Array.from({ length: testimonial.rating }).map(() => (
+              <Star className="w-5 h-5 text-yellow-400 fill-current" />
+            ))}
+          </div>
+          
+          <!-- Content -->
+          <div class="mb-6">
+            <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed italic">
+              "{testimonial.content}"
+            </p>
+          </div>
+          
+          <!-- Author -->
+          <div class="flex items-center">
+            {testimonial.image ? (
+              <img 
+                src={testimonial.image} 
+                alt={testimonial.name}
+                class="w-12 h-12 rounded-full object-cover mr-4 border-2 border-white dark:border-gray-700 shadow-lg"
+              />
+            ) : (
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                {testimonial.name.split(' ').map(n => n[0]).join('')}
+              </div>
+            )}
+            <div>
+              <div class="font-semibold text-gray-900 dark:text-white">{testimonial.name}</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</div>
+            </div>
+          </div>
+          
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-20">
+      <div class="bg-white dark:bg-gray-800 rounded-3xl p-12 shadow-2xl max-w-4xl mx-auto">
+        <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          ¿Quieres compartir tu experiencia?
+        </h3>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          Tu historia puede inspirar a otras personas a unirse a nuestra comunidad.
+        </p>
+        <a 
+          href="/contacto/" 
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+        >
+          Compartir mi testimonio
+          <Quote className="w-5 h-5 ml-2" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

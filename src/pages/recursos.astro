@@ -1,0 +1,272 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { Download, ExternalLink, BookOpen, FileText, Video, Users, Phone, Mail } from 'lucide-react';
+
+const resources = [
+  {
+    title: "Guía de Accesibilidad Universal",
+    description: "Manual práctico sobre cómo crear espacios y servicios accesibles para todas las personas.",
+    type: "PDF",
+    size: "2.5 MB",
+    category: "Accesibilidad",
+    icon: FileText,
+    downloadUrl: "/resources/guia-accesibilidad.pdf"
+  },
+  {
+    title: "Derechos de las Personas con Discapacidad",
+    description: "Resumen de los derechos reconocidos en la Convención de la ONU sobre los derechos de las personas con discapacidad.",
+    type: "PDF",
+    size: "1.8 MB",
+    category: "Derechos",
+    icon: BookOpen,
+    downloadUrl: "/resources/derechos-discapacidad.pdf"
+  },
+  {
+    title: "Recursos para Familias",
+    description: "Guía de apoyo para familias y cuidadores de personas con diversidad funcional.",
+    type: "PDF",
+    size: "3.2 MB",
+    category: "Familias",
+    icon: Users,
+    downloadUrl: "/resources/recursos-familias.pdf"
+  },
+  {
+    title: "Taller de Sensibilización",
+    description: "Presentación sobre diversidad funcional y sensibilización para empresas y entidades.",
+    type: "PDF",
+    size: "4.1 MB",
+    category: "Formación",
+    icon: Video,
+    downloadUrl: "/resources/taller-sensibilizacion.pdf"
+  }
+];
+
+const links = [
+  {
+    title: "ONCE",
+    description: "Organización Nacional de Ciegos Españoles. Recursos y servicios para personas con discapacidad visual.",
+    url: "https://www.once.es",
+    category: "Discapacidad Visual"
+  },
+  {
+    title: "CNSE",
+    description: "Confederación Estatal de Personas Sordas. Recursos para personas con discapacidad auditiva.",
+    url: "https://www.cnse.es",
+    category: "Discapacidad Auditiva"
+  },
+  {
+    title: "Plena Inclusión",
+    description: "Organización que representa a más de 900 entidades de apoyo a personas con discapacidad intelectual.",
+    url: "https://www.plenainclusion.org",
+    category: "Discapacidad Intelectual"
+  },
+  {
+    title: "Real Patronato sobre Discapacidad",
+    description: "Organismo público dependiente del Ministerio de Derechos Sociales.",
+    url: "https://www.rpd.es",
+    category: "General"
+  },
+  {
+    title: "Discapnet",
+    description: "Portal de información sobre discapacidad y recursos en Internet.",
+    url: "https://www.discapnet.es",
+    category: "General"
+  },
+  {
+    title: "Fundación ONCE",
+    description: "Fundación que trabaja por la inclusión social de las personas con discapacidad.",
+    url: "https://www.fundaciononce.es",
+    category: "General"
+  }
+];
+
+const faqs = [
+  {
+    question: "¿Cómo puedo asociarme a la asociación?",
+    answer: "Puedes asociarte completando el formulario de inscripción en nuestra web o contactándonos por WhatsApp. No hay cuotas de socio."
+  },
+  {
+    question: "¿Los servicios son gratuitos?",
+    answer: "Sí, la mayoría de nuestros servicios y actividades son gratuitos. Algunas actividades especiales pueden tener un coste simbólico."
+  },
+  {
+    question: "¿Necesito ser socio para participar en las actividades?",
+    answer: "No necesariamente. Muchas de nuestras actividades están abiertas a toda la comunidad."
+  },
+  {
+    question: "¿Cómo puedo colaborar con la asociación?",
+    answer: "Puedes colaborar como voluntario, haciendo donaciones o participando en nuestras actividades y eventos."
+  },
+  {
+    question: "¿Qué tipo de discapacidad atendéis?",
+    answer: "Trabajamos con personas con todo tipo de diversidad funcional: visual, auditiva, motora, intelectual y otras."
+  },
+  {
+    question: "¿Cuál es vuestra área de actuación?",
+    answer: "Principalmente Mataró y su área de influencia, aunque también colaboramos con otras entidades de la comarca."
+  }
+];
+
+const categories = ["Todos", "Accesibilidad", "Derechos", "Familias", "Formación", "General"];
+---
+
+<BaseLayout 
+  title="Recursos" 
+  description="Recursos, documentos y enlaces de interés sobre diversidad funcional e inclusión social."
+>
+  <Navigation />
+  
+  <main id="main-content" class="flex-1">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-purple-600 to-purple-800 text-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Recursos y Documentación
+        </h1>
+        <p class="text-xl mb-8 text-purple-100 max-w-3xl mx-auto">
+          Materiales informativos, guías prácticas y enlaces de interés sobre diversidad funcional, 
+          accesibilidad y derechos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Downloadable Resources -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Documentos Descargables</h2>
+          <p class="text-lg text-gray-600">Guías, manuales y recursos en formato PDF</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {resources.map((resource) => (
+            <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center">
+                  <resource.icon className="w-6 h-6" />
+                </div>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-200 text-gray-800">
+                  {resource.category}
+                </span>
+              </div>
+              
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">{resource.title}</h3>
+              <p class="text-gray-600 text-sm mb-4">{resource.description}</p>
+              
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-gray-500">{resource.type} • {resource.size}</span>
+                <a 
+                  href={resource.downloadUrl}
+                  class="inline-flex items-center px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors text-sm"
+                  download
+                >
+                  <Download className="w-4 h-4 mr-1" />
+                  Descargar
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Useful Links -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Enlaces de Interés</h2>
+          <p class="text-lg text-gray-600">Organizaciones y recursos externos relacionados con la diversidad funcional</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {links.map((link) => (
+            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow">
+              <div class="flex items-start justify-between mb-4">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                  <ExternalLink className="w-6 h-6" />
+                </div>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-200 text-gray-800">
+                  {link.category}
+                </span>
+              </div>
+              
+              <h3 class="text-lg font-semibold text-gray-900 mb-2">{link.title}</h3>
+              <p class="text-gray-600 text-sm mb-4">{link.description}</p>
+              
+              <a 
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm"
+              >
+                <ExternalLink className="w-4 h-4 mr-1" />
+                Visitar
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Preguntas Frecuentes</h2>
+          <p class="text-lg text-gray-600">Respuestas a las dudas más comunes</p>
+        </div>
+        
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <div class="bg-gray-50 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+              <p class="text-gray-600">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+        
+        <div class="text-center mt-8">
+          <p class="text-gray-600 mb-4">
+            ¿No encuentras la respuesta a tu pregunta?
+          </p>
+          <a href="/contacto/" class="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors">
+            <Phone className="mr-2 w-5 h-5" />
+            Contactar con nosotros
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-purple-600 text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">¿Necesitas más información?</h2>
+        <p class="text-xl mb-8 text-purple-100">
+          Estamos aquí para ayudarte. No dudes en contactar con nosotros para cualquier duda o consulta.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="https://wa.me/34600000000" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-8 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+          >
+            <Phone className="mr-2 w-5 h-5" />
+            WhatsApp
+          </a>
+          <a 
+            href="mailto:info@asociacionmataro.org" 
+            class="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-purple-600 transition-colors"
+          >
+            <Mail className="mr-2 w-5 h-5" />
+            Email
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>

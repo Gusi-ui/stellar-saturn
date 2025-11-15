@@ -1,0 +1,135 @@
+---
+import { Facebook, Phone, Mail, MapPin, Heart } from 'lucide-react';
+
+const footerLinks = {
+  asociacion: [
+    { name: 'Quiénes Somos', href: '/quienes-somos/' },
+    { name: 'Nuestra Misión', href: '/quienes-somos/#mision' },
+    { name: 'Nuestro Equipo', href: '/quienes-somos/#equipo' },
+    { name: 'Historia', href: '/quienes-somos/#historia' },
+  ],
+  servicios: [
+    { name: 'Servicios', href: '/servicios/' },
+    { name: 'Actividades', href: '/servicios/#actividades' },
+    { name: 'Calendario', href: '/servicios/#calendario' },
+    { name: 'Recursos', href: '/recursos/' },
+  ],
+  comunidad: [
+    { name: 'Blog', href: '/blog/' },
+    { name: 'Noticias', href: '/blog/' },
+    { name: 'Eventos', href: '/servicios/#eventos' },
+    { name: 'Voluntariado', href: '/contacto/#voluntariado' },
+  ],
+};
+
+const socialLinks = [
+  { name: 'Facebook', href: 'https://facebook.com/DiverMataro', icon: Facebook },
+  { name: 'WhatsApp', href: 'https://wa.me/34600000000', icon: Phone },
+];
+
+const contactInfo = [
+  { icon: Phone, text: '+34 600 000 000', href: 'tel:+34600000000' },
+  { icon: Mail, text: 'info@divermataro.org', href: 'mailto:info@divermataro.org' },
+  { icon: MapPin, text: 'Mataró, Barcelona', href: 'https://maps.google.com/?q=Mataró,Barcelona' },
+];
+---
+<footer class="bg-gray-900 dark:bg-black text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- About Section -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-lg">DM</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold">DiverMataró</h3>
+            <p class="text-sm text-gray-300">Asociación de Diversidad Funcional</p>
+          </div>
+        </div>
+        <p class="text-gray-300 text-sm mb-4">
+          Promovemos la inclusión social de personas con diversidad funcional en Mataró y alrededores.
+        </p>
+        <div class="flex space-x-4">
+          {socialLinks.map((social) => (
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-white transition-colors"
+              aria-label={`Síguenos en ${social.name}`}
+            >
+              <social.icon className="w-5 h-5" aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Association Links -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">Asociación</h4>
+        <ul class="space-y-2">
+          {footerLinks.asociacion.map((link) => (
+            <li>
+              <a href={link.href} class="text-gray-300 hover:text-white text-sm transition-colors">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">Servicios</h4>
+        <ul class="space-y-2">
+          {footerLinks.servicios.map((link) => (
+            <li>
+              <a href={link.href} class="text-gray-300 hover:text-white text-sm transition-colors">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-sm font-semibold text-gray-200 uppercase tracking-wider mb-4">Contacto</h4>
+        <ul class="space-y-2">
+          {contactInfo.map((item) => (
+            <li class="flex items-center space-x-2">
+              <item.icon className="w-4 h-4 text-gray-400" aria-hidden="true" />
+              <a href={item.href} class="text-gray-300 hover:text-white text-sm transition-colors">
+                {item.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div class="mt-4">
+          <a
+            href="/inscripcion/"
+            class="inline-flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            <Heart className="w-4 h-4" aria-hidden="true" />
+            <span>Asociarse</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom section -->
+    <div class="mt-12 pt-8 border-t border-gray-800">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div class="text-gray-400 text-sm">
+          © 2024 DiverMataró. Todos los derechos reservados.
+        </div>
+        <div class="flex space-x-6 text-sm text-gray-400">
+          <a href="/privacidad/" class="hover:text-white transition-colors">Política de Privacidad</a>
+          <a href="/accesibilidad/" class="hover:text-white transition-colors">Accesibilidad</a>
+          <a href="/cookies/" class="hover:text-white transition-colors">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

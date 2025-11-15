@@ -1,0 +1,160 @@
+---
+import { ArrowRight, Heart, Users, Star, Sparkles } from 'lucide-react';
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-orange-900 dark:to-amber-900 pt-28">
+  <!-- Animated Background Elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-400/20 to-orange-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-bounce"></div>
+  </div>
+
+  <!-- Floating Elements -->
+  <div class="absolute top-20 left-10 animate-float">
+    <div class="w-16 h-16 bg-white/20 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/30">
+      <Heart className="w-8 h-8 text-orange-500 animate-pulse" />
+    </div>
+  </div>
+  
+  <div class="absolute top-40 right-20 animate-float-delay">
+    <div class="w-20 h-20 bg-white/20 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/30">
+      <Users className="w-10 h-10 text-amber-500 animate-pulse" />
+    </div>
+  </div>
+  
+  <div class="absolute bottom-32 left-20 animate-float">
+    <div class="w-14 h-14 bg-white/20 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/30">
+      <Star className="w-7 h-7 text-yellow-600 animate-pulse" />
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center">
+      <!-- Badge -->
+      <div class="inline-flex items-center px-4 py-2 bg-white/30 dark:bg-white/10 backdrop-blur-lg rounded-full border border-white/50 mb-8 animate-fade-in">
+        <Sparkles className="w-4 h-4 text-yellow-500 mr-2" />
+        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Asociación de Diversidad Funcional</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+        <span class="block animate-fade-in-up">Construyendo un mundo</span>
+        <span class="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-fade-in-up delay-200">
+          más inclusivo
+        </span>
+        <span class="block animate-fade-in-up delay-300">para todos</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-400">
+        En DiverMataró trabajamos por la plena inclusión de las personas con diversidad funcional, promoviendo la accesibilidad universal y una sociedad sin barreras.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-500">
+        <a 
+          href="/inscripcion/" 
+          class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white font-semibold rounded-2xl hover:from-orange-700 hover:to-amber-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-amber-500/25"
+        >
+          <Heart className="w-5 h-5 mr-3 group-hover:animate-bounce" />
+          Únete a nuestra asociación
+          <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
+        </a>
+        
+        <a 
+          href="/quienes-somos/" 
+          class="group inline-flex items-center px-8 py-4 bg-white/30 dark:bg-white/10 backdrop-blur-lg text-gray-900 dark:text-white font-semibold rounded-2xl hover:bg-white/50 dark:hover:bg-white/20 border-2 border-white/50 hover:border-white/70 transform hover:scale-105 transition-all duration-300"
+        >
+          Conócenos mejor
+          <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto animate-fade-in-up delay-600">
+        <div class="text-center group">
+          <div class="w-20 h-20 bg-white/30 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/50 group-hover:scale-110 transition-transform duration-300">
+            <Users className="w-10 h-10 text-orange-600" />
+          </div>
+          <div class="text-3xl font-bold text-gray-900 dark:text-white mb-2">200+</div>
+          <div class="text-gray-600 dark:text-gray-300">Socios activos</div>
+        </div>
+        
+        <div class="text-center group">
+          <div class="w-20 h-20 bg-white/30 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/50 group-hover:scale-110 transition-transform duration-300">
+            <Heart className="w-10 h-10 text-amber-600" />
+          </div>
+          <div class="text-3xl font-bold text-gray-900 dark:text-white mb-2">22</div>
+          <div class="text-gray-600 dark:text-gray-300">Años de historia</div>
+        </div>
+        
+        <div class="text-center group">
+          <div class="w-20 h-20 bg-white/30 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/50 group-hover:scale-110 transition-transform duration-300">
+            <Star className="w-10 h-10 text-yellow-600" />
+          </div>
+          <div class="text-3xl font-bold text-gray-900 dark:text-white mb-2">50+</div>
+          <div class="text-gray-600 dark:text-gray-300">Actividades anuales</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div class="w-6 h-10 border-2 border-gray-400 dark:border-gray-300 rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-gray-400 dark:bg-gray-300 rounded-full mt-2 animate-pulse"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes float-delay {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fade-in-up {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delay {
+    animation: float-delay 8s ease-in-out infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-600 { animation-delay: 0.6s; }
+</style>
