@@ -2,159 +2,315 @@
 import { ArrowRight, Heart, Users, Star, Sparkles } from 'lucide-react';
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-orange-900 dark:to-amber-900 pt-28">
-  <!-- Animated Background Elements -->
+<section
+  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-orange-900 dark:to-amber-900 pt-28"
+>
+  {/* Video de fondo con parallax */}
   <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-400/20 to-orange-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-bounce"></div>
+    <video
+      id="hero-video"
+      class="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover hidden md:block"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    >
+      <source
+        src="https://assets.mixkit.co/videos/preview/mixkit-people-with-disabilities-having-fun-playing-43365-large.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    {/* Imagen fallback para móviles */}
+    <div
+      class="absolute inset-0 bg-cover bg-center md:hidden"
+      style="background-image: url('https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=2070&auto=format&fit=crop');"
+    >
+    </div>
+
+    {/* Overlay degradado para legibilidad */}
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-orange-900/70 via-amber-900/60 to-purple-900/70 backdrop-blur-[2px]"
+    >
+    </div>
   </div>
 
-  <!-- Floating Elements -->
-  <div class="absolute top-20 left-10 animate-float">
-    <div class="w-16 h-16 bg-white/20 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/30">
-      <Heart className="w-8 h-8 text-orange-500 animate-pulse" />
-    </div>
-  </div>
-  
-  <div class="absolute top-40 right-20 animate-float-delay">
-    <div class="w-20 h-20 bg-white/20 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/30">
-      <Users className="w-10 h-10 text-amber-500 animate-pulse" />
-    </div>
-  </div>
-  
-  <div class="absolute bottom-32 left-20 animate-float">
-    <div class="w-14 h-14 bg-white/20 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/30">
-      <Star className="w-7 h-7 text-yellow-600 animate-pulse" />
+  {/* Elementos flotantes decorativos */}
+  <div class="absolute top-20 left-10 animate-float z-10">
+    <div
+      class="w-16 h-16 bg-white/20 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/30 shadow-2xl"
+    >
+      <Heart className="w-8 h-8 text-orange-300 animate-pulse" />
     </div>
   </div>
 
-  <!-- Main Content -->
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <div class="absolute top-40 right-20 animate-float-delay z-10">
+    <div
+      class="w-20 h-20 bg-white/20 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/30 shadow-2xl"
+    >
+      <Users className="w-10 h-10 text-amber-300 animate-pulse" />
+    </div>
+  </div>
+
+  <div class="absolute bottom-32 left-20 animate-float z-10">
+    <div
+      class="w-14 h-14 bg-white/20 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center border border-white/30 shadow-2xl"
+    >
+      <Star className="w-7 h-7 text-yellow-300 animate-pulse" />
+    </div>
+  </div>
+
+  {/* Contenido principal */}
+  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="text-center">
-      <!-- Badge -->
-      <div class="inline-flex items-center px-4 py-2 bg-white/30 dark:bg-white/10 backdrop-blur-lg rounded-full border border-white/50 mb-8 animate-fade-in">
-        <Sparkles className="w-4 h-4 text-yellow-500 mr-2" />
-        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Asociación de Diversidad Funcional</span>
+      {/* Badge */}
+      <div
+        class="inline-flex items-center px-4 py-2 bg-white/40 dark:bg-white/20 backdrop-blur-xl rounded-full border border-white/60 mb-8 animate-fade-in shadow-2xl"
+      >
+        <Sparkles className="w-4 h-4 text-yellow-400 mr-2" />
+        <span class="text-sm font-medium text-white drop-shadow-lg">
+          Asociación de Diversidad Funcional
+        </span>
       </div>
 
-      <!-- Main Title -->
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+      {/* Título principal */}
+      <h1
+        class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl"
+      >
         <span class="block animate-fade-in-up">Construyendo un mundo</span>
-        <span class="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-fade-in-up delay-200">
+        <span
+          class="block bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent animate-fade-in-up delay-200 drop-shadow-lg"
+        >
           más inclusivo
         </span>
         <span class="block animate-fade-in-up delay-300">para todos</span>
       </h1>
 
-      <!-- Subtitle -->
-      <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-400">
-        En DiverMataró trabajamos por la plena inclusión de las personas con diversidad funcional, promoviendo la accesibilidad universal y una sociedad sin barreras.
+      {/* Subtítulo */}
+      <p
+        class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-400 drop-shadow-xl"
+      >
+        En DiverMataró trabajamos por la plena inclusión de las personas con diversidad funcional,
+        promoviendo la accesibilidad universal y una sociedad sin barreras.
       </p>
 
-      <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-500">
-        <a 
-          href="/inscripcion/" 
-          class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white font-semibold rounded-2xl hover:from-orange-700 hover:to-amber-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-amber-500/25"
+      {/* CTAs mejorados con glassmorphism */}
+      <div
+        class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-500"
+      >
+        <a
+          href="/inscripcion/"
+          class="group inline-flex items-center px-8 py-4 bg-white/30 backdrop-blur-xl text-white font-semibold rounded-2xl border-2 border-white/50 hover:bg-white hover:text-orange-600 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/40"
         >
           <Heart className="w-5 h-5 mr-3 group-hover:animate-bounce" />
           Únete a nuestra asociación
           <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
         </a>
-        
-        <a 
-          href="/quienes-somos/" 
-          class="group inline-flex items-center px-8 py-4 bg-white/30 dark:bg-white/10 backdrop-blur-lg text-gray-900 dark:text-white font-semibold rounded-2xl hover:bg-white/50 dark:hover:bg-white/20 border-2 border-white/50 hover:border-white/70 transform hover:scale-105 transition-all duration-300"
+
+        <a
+          href="/quienes-somos/"
+          class="group inline-flex items-center px-8 py-4 bg-white/20 backdrop-blur-xl text-white font-semibold rounded-2xl border-2 border-white/40 hover:bg-white/30 hover:border-white/60 transform hover:scale-105 transition-all duration-300 shadow-2xl"
         >
           Conócenos mejor
           <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
 
-      <!-- Stats Section -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto animate-fade-in-up delay-600">
+      {/* Stats Section con glassmorphism */}
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto animate-fade-in-up delay-600"
+      >
         <div class="text-center group">
-          <div class="w-20 h-20 bg-white/30 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/50 group-hover:scale-110 transition-transform duration-300">
-            <Users className="w-10 h-10 text-orange-600" />
+          <div
+            class="w-20 h-20 bg-white/30 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-white/50 group-hover:scale-110 transition-transform duration-300 shadow-2xl"
+          >
+            <Users className="w-10 h-10 text-white" />
           </div>
-          <div class="text-3xl font-bold text-gray-900 dark:text-white mb-2">200+</div>
-          <div class="text-gray-600 dark:text-gray-300">Socios activos</div>
+          <div class="text-3xl font-bold text-white mb-2 drop-shadow-lg">200+</div>
+          <div class="text-white/90 drop-shadow-lg">Socios activos</div>
         </div>
-        
+
         <div class="text-center group">
-          <div class="w-20 h-20 bg-white/30 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/50 group-hover:scale-110 transition-transform duration-300">
-            <Heart className="w-10 h-10 text-amber-600" />
+          <div
+            class="w-20 h-20 bg-white/30 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-white/50 group-hover:scale-110 transition-transform duration-300 shadow-2xl"
+          >
+            <Heart className="w-10 h-10 text-white" />
           </div>
-          <div class="text-3xl font-bold text-gray-900 dark:text-white mb-2">22</div>
-          <div class="text-gray-600 dark:text-gray-300">Años de historia</div>
+          <div class="text-3xl font-bold text-white mb-2 drop-shadow-lg">22</div>
+          <div class="text-white/90 drop-shadow-lg">Años de historia</div>
         </div>
-        
+
         <div class="text-center group">
-          <div class="w-20 h-20 bg-white/30 dark:bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/50 group-hover:scale-110 transition-transform duration-300">
-            <Star className="w-10 h-10 text-yellow-600" />
+          <div
+            class="w-20 h-20 bg-white/30 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-white/50 group-hover:scale-110 transition-transform duration-300 shadow-2xl"
+          >
+            <Star className="w-10 h-10 text-white" />
           </div>
-          <div class="text-3xl font-bold text-gray-900 dark:text-white mb-2">50+</div>
-          <div class="text-gray-600 dark:text-gray-300">Actividades anuales</div>
+          <div class="text-3xl font-bold text-white mb-2 drop-shadow-lg">50+</div>
+          <div class="text-white/90 drop-shadow-lg">Actividades anuales</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <div class="w-6 h-10 border-2 border-gray-400 dark:border-gray-300 rounded-full flex justify-center">
-      <div class="w-1 h-3 bg-gray-400 dark:bg-gray-300 rounded-full mt-2 animate-pulse"></div>
+  {/* Indicador de scroll mejorado */}
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+    <div
+      class="w-6 h-10 border-2 border-white/80 rounded-full flex justify-center backdrop-blur-sm bg-white/20 shadow-2xl"
+    >
+      <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
     </div>
   </div>
 </section>
 
 <style>
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
-  
+
   @keyframes float-delay {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
   }
-  
+
   @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
-  
+
   @keyframes fade-in-up {
-    from { 
-      opacity: 0; 
-      transform: translateY(30px); 
+    from {
+      opacity: 0;
+      transform: translateY(30px);
     }
-    to { 
-      opacity: 1; 
-      transform: translateY(0); 
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
-  
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .animate-float-delay {
     animation: float-delay 8s ease-in-out infinite;
   }
-  
+
   .animate-fade-in {
     animation: fade-in 1s ease-out;
   }
-  
+
   .animate-fade-in-up {
     animation: fade-in-up 0.8s ease-out forwards;
   }
-  
-  .delay-200 { animation-delay: 0.2s; }
-  .delay-300 { animation-delay: 0.3s; }
-  .delay-400 { animation-delay: 0.4s; }
-  .delay-500 { animation-delay: 0.5s; }
-  .delay-600 { animation-delay: 0.6s; }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+  .delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  /* Parallax effect */
+  @media (prefers-reduced-motion: no-preference) {
+    #hero-video {
+      transform: translate3d(-50%, -50%, 0);
+      transition: transform 0.1s ease-out;
+    }
+  }
+
+  /* Desactivar animaciones si el usuario prefiere reducir movimiento */
+  @media (prefers-reduced-motion: reduce) {
+    #hero-video {
+      animation: none !important;
+    }
+
+    .animate-float,
+    .animate-float-delay,
+    .animate-bounce {
+      animation: none !important;
+    }
+
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 </style>
+
+<script>
+  // Efecto parallax sutil en el video
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const video = document.getElementById('hero-video') as HTMLVideoElement | null;
+
+    if (video) {
+      let ticking = false;
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const scrolled = window.scrollY;
+            const parallaxSpeed = 0.3;
+            const translateY = -50 + scrolled * parallaxSpeed * 0.05;
+
+            video.style.transform = `translate3d(-50%, ${translateY}%, 0)`;
+            ticking = false;
+          });
+
+          ticking = true;
+        }
+      });
+    }
+  }
+
+  // Pausar video cuando no esté visible para ahorrar recursos
+  if ('IntersectionObserver' in window) {
+    const video = document.getElementById('hero-video') as HTMLVideoElement | null;
+
+    if (video) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              video.play().catch(() => {
+                // El video no se puede reproducir automáticamente
+              });
+            } else {
+              video.pause();
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      observer.observe(video);
+    }
+  }
+</script>

@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Ejecutando validaciones pre-commit..."
+
+# Ejecutar lint-staged para formatear y validar archivos staged
+npx lint-staged
+
+# Ejecutar type-check en todo el proyecto
+echo "🔎 Verificando tipos TypeScript..."
+npm run type-check
+
+# Si llegamos aquí, todas las validaciones pasaron
+echo "✅ Todas las validaciones pasaron. Procediendo con el commit..."

@@ -6,7 +6,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx,.astro --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,astro,json,css,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,astro,json,css,md}\"",
+    "type-check": "astro check",
+    "validate": "npm run format:check && npm run lint && npm run type-check",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.5",
@@ -25,5 +32,21 @@
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
     "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^1.5.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.0",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

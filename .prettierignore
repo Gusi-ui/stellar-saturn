@@ -1,0 +1,14 @@
+dist/
+node_modules/
+.astro/
+build/
+.netlify/
+coverage/
+public/
+*.min.js
+*.min.css
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+CHANGELOG.md
+
