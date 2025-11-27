@@ -3,17 +3,18 @@ import { ArrowRight, Heart, Users, Star, Sparkles } from 'lucide-react';
 ---
 
 <section
-  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-orange-900 dark:to-amber-900 pt-28"
+  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-orange-900 dark:to-amber-900"
 >
   {/* Video de fondo con parallax */}
-  <div class="absolute inset-0 overflow-hidden">
+  <div class="absolute inset-0 overflow-hidden -z-10">
     <video
       id="hero-video"
-      class="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover hidden md:block"
+      class="absolute top-0 left-0 w-full h-full object-cover hidden md:block"
       autoplay
       muted
       loop
       playsinline
+      preload="auto"
       aria-hidden="true"
     >
       <source
@@ -31,7 +32,7 @@ import { ArrowRight, Heart, Users, Star, Sparkles } from 'lucide-react';
 
     {/* Overlay degradado para legibilidad */}
     <div
-      class="absolute inset-0 bg-gradient-to-br from-orange-900/70 via-amber-900/60 to-purple-900/70 backdrop-blur-[2px]"
+      class="absolute inset-0 bg-gradient-to-br from-orange-900/70 via-amber-900/60 to-purple-900/70"
     >
     </div>
   </div>
@@ -240,8 +241,8 @@ import { ArrowRight, Heart, Users, Star, Sparkles } from 'lucide-react';
   /* Parallax effect */
   @media (prefers-reduced-motion: no-preference) {
     #hero-video {
-      transform: translate3d(-50%, -50%, 0);
       transition: transform 0.1s ease-out;
+      will-change: transform;
     }
   }
 
@@ -278,9 +279,9 @@ import { ArrowRight, Heart, Users, Star, Sparkles } from 'lucide-react';
           window.requestAnimationFrame(() => {
             const scrolled = window.scrollY;
             const parallaxSpeed = 0.3;
-            const translateY = -50 + scrolled * parallaxSpeed * 0.05;
+            const translateY = scrolled * parallaxSpeed;
 
-            video.style.transform = `translate3d(-50%, ${translateY}%, 0)`;
+            video.style.transform = `translateY(${translateY}px)`;
             ticking = false;
           });
 
@@ -290,27 +291,51 @@ import { ArrowRight, Heart, Users, Star, Sparkles } from 'lucide-react';
     }
   }
 
-  // Pausar video cuando no esté visible para ahorrar recursos
-  if ('IntersectionObserver' in window) {
+  // Forzar reproducción del video
+  document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('hero-video') as HTMLVideoElement | null;
 
     if (video) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              video.play().catch(() => {
-                // El video no se puede reproducir automáticamente
-              });
-            } else {
-              video.pause();
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
+      // Intentar reproducir el video
+      const playPromise = video.play();
 
-      observer.observe(video);
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log('Video playing successfully');
+          })
+          .catch((error) => {
+            console.log('Auto-play prevented:', error);
+            // Intentar reproducir en interacción del usuario
+            document.addEventListener(
+              'click',
+              () => {
+                video.play();
+              },
+              { once: true }
+            );
+          });
+      }
+
+      // Pausar cuando no esté visible
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                video.play().catch(() => {
+                  // Silenciar errores de autoplay
+                });
+              } else {
+                video.pause();
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        observer.observe(video);
+      }
     }
-  }
+  });
 </script>
