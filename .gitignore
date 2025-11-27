@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Large video files (deploy to CDN or Netlify separately)
+public/hero-video.mp4
+public/*.mp4
