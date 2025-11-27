@@ -5,28 +5,29 @@ import Footer from '../components/Footer.astro';
 import { CheckCircle, Phone, Users, Heart } from 'lucide-react';
 ---
 
-<BaseLayout 
-  title="Gracias por tu inscripción" 
+<BaseLayout
+  title="Gracias por tu inscripción"
   description="Tu inscripción ha sido recibida correctamente. Nos pondremos en contacto contigo pronto."
 >
   <Navigation />
-  
+
   <main id="main-content" class="flex-1">
     <!-- Success Hero -->
     <section class="bg-gradient-to-br from-green-600 to-green-800 text-white py-20">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="mb-8">
-          <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div
+            class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
             <CheckCircle className="w-10 h-10 text-white" />
           </div>
-          <h1 class="text-4xl md:text-5xl font-bold mb-6">
-            ¡Bienvenido/a a nuestra comunidad!
-          </h1>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">¡Bienvenido/a a nuestra comunidad!</h1>
           <p class="text-xl mb-8 text-green-100">
-            Tu inscripción ha sido recibida correctamente. Nos pondremos en contacto contigo pronto a través de WhatsApp.
+            Tu inscripción ha sido recibida correctamente. Nos pondremos en contacto contigo pronto
+            a través de WhatsApp.
           </p>
         </div>
-        
+
         <div class="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-2xl mx-auto">
           <h2 class="text-2xl font-bold mb-4">¿Qué pasa ahora?</h2>
           <div class="space-y-4 text-left">
@@ -36,27 +37,33 @@ import { CheckCircle, Phone, Users, Heart } from 'lucide-react';
               </div>
               <div>
                 <h3 class="font-semibold">Revisaremos tu solicitud</h3>
-                <p class="text-green-100 text-sm">En las próximas 24-48 horas revisaremos tu inscripción.</p>
+                <p class="text-green-100 text-sm">
+                  En las próximas 24-48 horas revisaremos tu inscripción.
+                </p>
               </div>
             </div>
-            
+
             <div class="flex items-start space-x-3">
               <div class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mt-1">
                 <span class="text-white font-bold text-sm">2</span>
               </div>
               <div>
                 <h3 class="font-semibold">Te contactaremos por WhatsApp</h3>
-                <p class="text-green-100 text-sm">Nos pondremos en contacto contigo para darte la bienvenida.</p>
+                <p class="text-green-100 text-sm">
+                  Nos pondremos en contacto contigo para darte la bienvenida.
+                </p>
               </div>
             </div>
-            
+
             <div class="flex items-start space-x-3">
               <div class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mt-1">
                 <span class="text-white font-bold text-sm">3</span>
               </div>
               <div>
                 <h3 class="font-semibold">Te informaremos de nuestras actividades</h3>
-                <p class="text-green-100 text-sm">Recibirás información sobre eventos, talleres y actividades.</p>
+                <p class="text-green-100 text-sm">
+                  Recibirás información sobre eventos, talleres y actividades.
+                </p>
               </div>
             </div>
           </div>
@@ -71,46 +78,81 @@ import { CheckCircle, Phone, Users, Heart } from 'lucide-react';
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Mientras tanto, te invitamos a</h2>
           <p class="text-lg text-gray-600">Conocer más sobre nuestra asociación y lo que hacemos</p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="text-center">
-            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
               <Users className="w-8 h-8" />
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Conocer nuestra historia</h3>
-            <p class="text-gray-600 mb-4">Descubre quiénes somos y cuál es nuestra misión como asociación.</p>
-            <a href="/quienes-somos/" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+            <p class="text-gray-600 mb-4">
+              Descubre quiénes somos y cuál es nuestra misión como asociación.
+            </p>
+            <a
+              href="/quienes-somos/"
+              class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+            >
               Conócenos
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"></path>
               </svg>
             </a>
           </div>
-          
+
           <div class="text-center">
-            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
               <Heart className="w-8 h-8" />
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Ver nuestros servicios</h3>
-            <p class="text-gray-600 mb-4">Descubre los servicios y actividades que ofrecemos a la comunidad.</p>
-            <a href="/servicios/" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+            <p class="text-gray-600 mb-4">
+              Descubre los servicios y actividades que ofrecemos a la comunidad.
+            </p>
+            <a
+              href="/servicios/"
+              class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+            >
               Nuestros servicios
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"></path>
               </svg>
             </a>
           </div>
-          
+
           <div class="text-center">
-            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
               <Phone className="w-8 h-8" />
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">Seguir en contacto</h3>
-            <p class="text-gray-600 mb-4">Síguenos en nuestras redes sociales para estar al día de nuestras actividades.</p>
-            <a href="https://facebook.com/asociacionmataro" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+            <p class="text-gray-600 mb-4">
+              Síguenos en nuestras redes sociales para estar al día de nuestras actividades.
+            </p>
+            <a
+              href="https://facebook.com/asociacionmataro"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+            >
               Facebook
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"></path>
               </svg>
             </a>
           </div>
@@ -126,8 +168,8 @@ import { CheckCircle, Phone, Users, Heart } from 'lucide-react';
           No dudes en contactarnos si tienes cualquier duda o consulta.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="https://wa.me/34600000000" 
+          <a
+            href="https://wa.me/34600000000"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
@@ -135,8 +177,8 @@ import { CheckCircle, Phone, Users, Heart } from 'lucide-react';
             <Phone className="mr-2 w-5 h-5" />
             Contactar por WhatsApp
           </a>
-          <a 
-            href="/contacto/" 
+          <a
+            href="/contacto/"
             class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Ver más formas de contacto
@@ -145,6 +187,6 @@ import { CheckCircle, Phone, Users, Heart } from 'lucide-react';
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </BaseLayout>

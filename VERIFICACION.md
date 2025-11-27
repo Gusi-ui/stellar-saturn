@@ -10,6 +10,7 @@
 4. Si el deploy está en progreso, espera a que termine (1-2 minutos)
 
 **Si el deploy falló:**
+
 - Haz clic en el deploy fallido para ver los logs
 - Busca errores relacionados con "Supabase" o "environment variables"
 - Verifica que las variables estén correctamente escritas
@@ -25,6 +26,7 @@ Si agregaste las variables después del último deploy, necesitas hacer un nuevo
 3. Espera a que termine
 
 **O simplemente haz un pequeño cambio y push:**
+
 - Esto activará el auto-deploy si lo tienes configurado
 
 ---
@@ -44,6 +46,7 @@ Si agregaste las variables después del último deploy, necesitas hacer un nuevo
 4. Haz clic en **"Enviar inscripción"**
 
 **Resultado esperado:**
+
 - Deberías ver un mensaje de éxito: "¡Inscripción enviada!"
 - Después de 3 segundos, deberías ser redirigido a `/gracias-por-inscribirte`
 
@@ -58,6 +61,7 @@ Si agregaste las variables después del último deploy, necesitas hacer un nuevo
 5. Deberías ver el nuevo registro con los datos que ingresaste
 
 **Si no ves el registro:**
+
 - Verifica que el formulario se haya enviado correctamente
 - Revisa los logs de Netlify (ver Paso 5)
 - Verifica que la tabla `registrations` existe en Supabase
@@ -112,21 +116,25 @@ Si todo funciona correctamente, deberías poder:
 ## 🐛 Solución de Problemas Rápida
 
 ### El formulario no se envía
+
 - Revisa la consola del navegador (F12 → Console)
 - Verifica que la URL del sitio sea correcta
 - Asegúrate de estar en la página `/inscripcion`
 
 ### Error 500 en el formulario
+
 - Revisa los logs de Netlify Functions
 - Verifica las variables de entorno
 - Verifica que la tabla existe en Supabase
 
 ### Los datos no aparecen en Supabase
+
 - Verifica que estés viendo la tabla correcta (`registrations`)
 - Verifica que el formulario se haya enviado correctamente
 - Revisa los logs de Netlify para ver si hay errores
 
 ### Variables de entorno no funcionan
+
 - Asegúrate de estar en **Site settings**, no Team settings
 - Verifica que los nombres sean exactos (case-sensitive)
 - Haz un nuevo deploy después de agregar las variables
@@ -136,8 +144,8 @@ Si todo funciona correctamente, deberías poder:
 ## 📞 ¿Necesitas Ayuda?
 
 Si algo no funciona:
+
 1. Revisa los logs de Netlify (Deploys → Functions)
 2. Verifica la consola del navegador (F12)
 3. Verifica que las variables estén correctamente configuradas
 4. Asegúrate de haber usado la service_role key de Supabase
-

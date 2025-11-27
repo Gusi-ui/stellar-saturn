@@ -14,12 +14,14 @@
 Los errores más comunes que verás:
 
 #### Error: "Faltan las variables de entorno de Supabase"
+
 ```
-Error: Faltan las variables de entorno de Supabase. 
+Error: Faltan las variables de entorno de Supabase.
 Asegúrate de configurar PUBLIC_SUPABASE_URL y SUPABASE_SERVICE_ROLE_KEY
 ```
 
 **Solución:**
+
 - Verifica que las variables estén en **Site settings** → **Environment variables**
 - Verifica que los nombres sean exactos:
   - `PUBLIC_SUPABASE_URL` (con guiones bajos, mayúsculas)
@@ -27,32 +29,38 @@ Asegúrate de configurar PUBLIC_SUPABASE_URL y SUPABASE_SERVICE_ROLE_KEY
 - Haz un nuevo deploy después de agregar las variables
 
 #### Error: "Invalid API key" o "JWT expired"
+
 ```
 Error: Invalid API key
 ```
 
 **Solución:**
+
 - Ve a Supabase → Settings → API
 - Copia nuevamente la **service_role** key (NO la anon key)
 - Actualiza la variable `SUPABASE_SERVICE_ROLE_KEY` en Netlify
 - Haz un nuevo deploy
 
 #### Error: "relation 'registrations' does not exist"
+
 ```
 Error: relation "registrations" does not exist
 ```
 
 **Solución:**
+
 - Ve a Supabase → SQL Editor
 - Ejecuta nuevamente el script `supabase-schema.sql`
 - Verifica que la tabla existe: Table Editor → deberías ver `registrations`
 
 #### Error: "new row violates row-level security policy"
+
 ```
 Error: new row violates row-level security policy
 ```
 
 **Solución:**
+
 - Esto no debería pasar con service_role key, pero si ocurre:
 - Ve a Supabase → Table Editor → registrations
 - Haz clic en "..." → "Edit RLS policies"
@@ -70,6 +78,7 @@ Error: new row violates row-level security policy
 4. Verifica que estés usando la **service_role** key, no la anon key
 
 **Para verificar la service_role key:**
+
 - En Supabase → Settings → API
 - Busca la sección "Project API keys"
 - Deberías ver dos keys: "anon" y "service_role"
@@ -132,6 +141,7 @@ SUPABASE_SERVICE_ROLE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ### Solución 2: Hacer Nuevo Deploy
 
 Después de agregar o modificar variables:
+
 1. Ve a Deploys → Trigger deploy → Deploy site
 2. Espera a que termine
 3. Prueba nuevamente
@@ -160,4 +170,3 @@ Si el problema persiste, comparte:
 1. Revisa los logs de Netlify Functions (Paso 1)
 2. Copia el error exacto
 3. Compártelo conmigo para ayudarte a solucionarlo
-

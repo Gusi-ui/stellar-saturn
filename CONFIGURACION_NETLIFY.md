@@ -43,7 +43,7 @@ En el plan gratuito de Netlify, debes configurar las variables de entorno **a ni
 - **Key**: `PUBLIC_SUPABASE_URL`
 - **Value**: Pega la Project URL que copiaste de Supabase
   - Ejemplo: `https://xxxxxxxxxxxxx.supabase.co`
-- **Scopes**: 
+- **Scopes**:
   - ✅ Marca "Production"
   - ✅ Marca "Deploy previews" (opcional pero recomendado)
   - ✅ Marca "Branch deploys" (opcional pero recomendado)
@@ -55,7 +55,7 @@ En el plan gratuito de Netlify, debes configurar las variables de entorno **a ni
 - **Key**: `SUPABASE_SERVICE_ROLE_KEY`
 - **Value**: Pega la service_role key que copiaste de Supabase
   - Ejemplo: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...` (cadena muy larga)
-- **Scopes**: 
+- **Scopes**:
   - ✅ Marca "Production"
   - ✅ Marca "Deploy previews" (opcional pero recomendado)
   - ✅ Marca "Branch deploys" (opcional pero recomendado)
@@ -64,6 +64,7 @@ En el plan gratuito de Netlify, debes configurar las variables de entorno **a ni
 ### Verificar las Variables
 
 Deberías ver ahora dos variables en la sección **"Environment variables for this site"**:
+
 - ✅ `PUBLIC_SUPABASE_URL`
 - ✅ `SUPABASE_SERVICE_ROLE_KEY`
 
@@ -104,6 +105,7 @@ Si aún no has desplegado:
 **Causa**: Estás intentando configurar variables compartidas a nivel de equipo.
 
 **Solución**:
+
 - Asegúrate de estar en **"Site settings"** (no "Team settings")
 - Selecciona tu sitio específico primero
 - Ve a Site settings → Environment variables
@@ -114,6 +116,7 @@ Si aún no has desplegado:
 **Causa**: Las variables no están configuradas o tienen nombres incorrectos.
 
 **Solución**:
+
 - Verifica que los nombres sean exactamente:
   - `PUBLIC_SUPABASE_URL` (con guiones bajos, no guiones)
   - `SUPABASE_SERVICE_ROLE_KEY` (con guiones bajos, mayúsculas)
@@ -126,6 +129,7 @@ Si aún no has desplegado:
 **Causa**: La service_role key es incorrecta o expiró.
 
 **Solución**:
+
 - Ve a Supabase → Settings → API
 - Copia nuevamente la service_role key
 - Actualiza la variable en Netlify (Site settings)
@@ -136,6 +140,7 @@ Si aún no has desplegado:
 **Causa**: Puede ser un problema de permisos o la tabla no existe.
 
 **Solución**:
+
 - Verifica en Supabase que la tabla `registrations` existe
 - Ve a Supabase → Table Editor → deberías ver la tabla `registrations`
 - Si no existe, ejecuta nuevamente el script `supabase-schema.sql`
@@ -166,7 +171,6 @@ Si aún no has desplegado:
 - **Site settings** → **Environment variables**: ✅ Disponible en plan gratuito
   - Variables específicas para un sitio
   - Se configuran por sitio individual
-  
 - **Team settings** → **Environment variables**: ❌ Solo en planes de pago
   - Variables compartidas para todos los sitios del equipo
   - Requiere upgrade
@@ -178,6 +182,7 @@ Si aún no has desplegado:
 ## ¿Necesitas Ayuda?
 
 Si encuentras algún problema:
+
 1. Revisa los logs de Netlify (Deploys → Functions logs)
 2. Verifica que las variables estén en **Site settings**, no Team settings
 3. Verifica que los nombres de las variables sean exactos

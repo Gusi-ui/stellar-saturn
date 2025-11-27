@@ -11,10 +11,10 @@ function getSupabaseClient() {
     const missingVars = [];
     if (!supabaseUrl) missingVars.push('PUBLIC_SUPABASE_URL');
     if (!supabaseServiceKey) missingVars.push('SUPABASE_SERVICE_ROLE_KEY');
-    
+
     throw new Error(
       `Faltan las variables de entorno de Supabase: ${missingVars.join(', ')}. ` +
-      'Asegúrate de configurarlas en Netlify Site settings → Environment variables'
+        'Asegúrate de configurarlas en Netlify Site settings → Environment variables'
     );
   }
 
@@ -23,8 +23,8 @@ function getSupabaseClient() {
   return createClient(supabaseUrl, supabaseServiceKey, {
     auth: {
       autoRefreshToken: false,
-      persistSession: false
-    }
+      persistSession: false,
+    },
   });
 }
 
@@ -41,4 +41,3 @@ export interface RegistrationData {
   newsletter?: boolean;
   consent: boolean;
 }
-

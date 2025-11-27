@@ -75,6 +75,7 @@ Si esto funciona, la tabla está bien configurada y el problema está en otro lu
    - **service_role key**: Una cadena larga que empieza con `eyJ...`
 
 **Importante:**
+
 - Usa la **service_role** key, NO la **anon** key
 - La service_role key tiene permisos completos y es la que necesitas para el servidor
 
@@ -83,16 +84,21 @@ Si esto funciona, la tabla está bien configurada y el problema está en otro lu
 ## Problemas Comunes
 
 ### La tabla no existe
+
 **Solución:** Ejecuta el script `supabase-schema.sql` en SQL Editor
 
 ### Error al insertar manualmente
-**Solución:** 
+
+**Solución:**
+
 - Verifica que todos los campos requeridos estén completos
 - Verifica que `relationship` tenga un valor válido: 'person', 'family', 'professional', o 'volunteer'
 - Verifica que `consent` esté marcado como true
 
 ### No puedo ver la tabla
+
 **Solución:**
+
 - Verifica que estés en el proyecto correcto de Supabase
 - Refresca la página
 - Verifica que el script SQL se ejecutó correctamente
@@ -107,4 +113,3 @@ Si esto funciona, la tabla está bien configurada y el problema está en otro lu
 - [ ] Tengo la Project URL de Supabase
 - [ ] Tengo la service_role key (no la anon key)
 - [ ] Las variables están configuradas en Netlify con estos valores
-

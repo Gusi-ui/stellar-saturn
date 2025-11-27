@@ -7,28 +7,28 @@ export const POST: APIRoute = async ({ request }) => {
     if (!supabase) {
       console.error('Supabase client no está inicializado');
       return new Response(
-        JSON.stringify({ 
-          error: 'Error de configuración del servidor. Por favor, contacta al administrador.'
-        }), 
-        { 
+        JSON.stringify({
+          error: 'Error de configuración del servidor. Por favor, contacta al administrador.',
+        }),
+        {
           status: 500,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' },
         }
       );
     }
 
     const data = await request.json();
-    
+
     // Validate required fields
     if (!data.fullName || !data.email || !data.phone) {
       return new Response(
-        JSON.stringify({ 
+        JSON.stringify({
           error: 'Por favor, completa todos los campos obligatorios',
-          fields: ['fullName', 'email', 'phone']
-        }), 
-        { 
+          fields: ['fullName', 'email', 'phone'],
+        }),
+        {
           status: 400,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' },
         }
       );
     }
@@ -37,13 +37,13 @@ export const POST: APIRoute = async ({ request }) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
       return new Response(
-        JSON.stringify({ 
+        JSON.stringify({
           error: 'Por favor, introduce un email válido',
-          fields: ['email']
-        }), 
-        { 
+          fields: ['email'],
+        }),
+        {
           status: 400,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' },
         }
       );
     }
@@ -52,13 +52,13 @@ export const POST: APIRoute = async ({ request }) => {
     const phoneRegex = /^[67]\d{8}$/;
     if (!phoneRegex.test(data.phone)) {
       return new Response(
-        JSON.stringify({ 
+        JSON.stringify({
           error: 'Por favor, introduce un número de teléfono válido (9 dígitos)',
-          fields: ['phone']
-        }), 
-        { 
+          fields: ['phone'],
+        }),
+        {
           status: 400,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' },
         }
       );
     }
@@ -66,13 +66,13 @@ export const POST: APIRoute = async ({ request }) => {
     // Validate consent
     if (!data.consent) {
       return new Response(
-        JSON.stringify({ 
+        JSON.stringify({
           error: 'Debes aceptar la política de privacidad',
-          fields: ['consent']
-        }), 
-        { 
+          fields: ['consent'],
+        }),
+        {
           status: 400,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' },
         }
       );
     }
@@ -85,7 +85,7 @@ export const POST: APIRoute = async ({ request }) => {
       functional_diversity: data.functionalDiversity || null,
       relationship: data.relationship,
       newsletter: data.newsletter || false,
-      consent: data.consent
+      consent: data.consent,
     };
 
     // Guardar en Supabase
@@ -100,19 +100,19 @@ export const POST: APIRoute = async ({ request }) => {
         message: dbError.message,
         code: dbError.code,
         details: dbError.details,
-        hint: dbError.hint
+        hint: dbError.hint,
       });
-      
+
       // Verificar si es un error de duplicado (email ya existe)
       if (dbError.code === '23505') {
         return new Response(
-          JSON.stringify({ 
+          JSON.stringify({
             error: 'Ya existe una inscripción con este correo electrónico',
-            fields: ['email']
-          }), 
-          { 
+            fields: ['email'],
+          }),
+          {
             status: 409,
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json' },
           }
         );
       }
@@ -121,23 +121,24 @@ export const POST: APIRoute = async ({ request }) => {
       if (dbError.code === '42P01') {
         console.error('La tabla registrations no existe en Supabase');
         return new Response(
-          JSON.stringify({ 
-            error: 'Error de configuración de la base de datos. Por favor, contacta al administrador.'
-          }), 
-          { 
+          JSON.stringify({
+            error:
+              'Error de configuración de la base de datos. Por favor, contacta al administrador.',
+          }),
+          {
             status: 500,
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json' },
           }
         );
       }
 
       return new Response(
-        JSON.stringify({ 
-          error: 'Error al procesar la inscripción. Por favor, inténtalo de nuevo más tarde.'
-        }), 
-        { 
+        JSON.stringify({
+          error: 'Error al procesar la inscripción. Por favor, inténtalo de nuevo más tarde.',
+        }),
+        {
           status: 500,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' },
         }
       );
     }
@@ -146,7 +147,7 @@ export const POST: APIRoute = async ({ request }) => {
     console.log('Registro guardado exitosamente:', {
       id: insertedData.id,
       email: insertedData.email,
-      timestamp: insertedData.created_at
+      timestamp: insertedData.created_at,
     });
 
     // Aquí podrías agregar:
@@ -155,49 +156,49 @@ export const POST: APIRoute = async ({ request }) => {
     // 3. Integración con Google Sheets si es necesario
 
     return new Response(
-      JSON.stringify({ 
+      JSON.stringify({
         success: true,
         message: 'Inscripción recibida correctamente. Nos pondremos en contacto contigo pronto.',
-        id: insertedData.id
-      }), 
+        id: insertedData.id,
+      }),
       {
         status: 200,
-        headers: { 
+        headers: {
           'Content-Type': 'application/json',
-          'Cache-Control': 'no-cache'
-        }
+          'Cache-Control': 'no-cache',
+        },
       }
     );
-    
   } catch (error) {
     console.error('Error processing registration:', error);
-    
+
     // Log detallado del error para debugging
     if (error instanceof Error) {
       console.error('Error message:', error.message);
       console.error('Error stack:', error.stack);
-      
+
       // Si es un error de variables de entorno, dar mensaje más específico
       if (error.message.includes('variables de entorno')) {
         return new Response(
-          JSON.stringify({ 
-            error: 'Error de configuración del servidor. Las variables de entorno no están configuradas correctamente.'
-          }), 
-          { 
+          JSON.stringify({
+            error:
+              'Error de configuración del servidor. Las variables de entorno no están configuradas correctamente.',
+          }),
+          {
             status: 500,
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json' },
           }
         );
       }
     }
-    
+
     return new Response(
-      JSON.stringify({ 
-        error: 'Error al procesar la inscripción. Por favor, inténtalo de nuevo más tarde.'
-      }), 
-      { 
+      JSON.stringify({
+        error: 'Error al procesar la inscripción. Por favor, inténtalo de nuevo más tarde.',
+      }),
+      {
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
       }
     );
   }

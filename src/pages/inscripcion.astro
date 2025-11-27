@@ -7,43 +7,45 @@ import { Users, Heart, Phone, CheckCircle } from 'lucide-react';
 
 const benefits = [
   {
-    title: "Comunidad Activa",
-    description: "Forma parte de una comunidad que trabaja por la inclusión social y los derechos de las personas con diversidad funcional.",
-    icon: Users
+    title: 'Comunidad Activa',
+    description:
+      'Forma parte de una comunidad que trabaja por la inclusión social y los derechos de las personas con diversidad funcional.',
+    icon: Users,
   },
   {
-    title: "Sin Cuotas",
-    description: "No pedimos cuotas de socio. Nuestra asociación es gratuita porque creemos en la accesibilidad universal.",
-    icon: Heart
+    title: 'Sin Cuotas',
+    description:
+      'No pedimos cuotas de socio. Nuestra asociación es gratuita porque creemos en la accesibilidad universal.',
+    icon: Heart,
   },
   {
-    title: "Comunicación Directa",
-    description: "Estamos disponibles a través de WhatsApp para resolver cualquier duda o consulta de forma rápida y directa.",
-    icon: Phone
+    title: 'Comunicación Directa',
+    description:
+      'Estamos disponibles a través de WhatsApp para resolver cualquier duda o consulta de forma rápida y directa.',
+    icon: Phone,
   },
   {
-    title: "Información Actualizada",
-    description: "Recibe información sobre nuestras actividades, eventos y noticias relacionadas con la diversidad funcional.",
-    icon: CheckCircle
-  }
+    title: 'Información Actualizada',
+    description:
+      'Recibe información sobre nuestras actividades, eventos y noticias relacionadas con la diversidad funcional.',
+    icon: CheckCircle,
+  },
 ];
 ---
 
-<BaseLayout 
-  title="Inscripción" 
+<BaseLayout
+  title="Inscripción"
   description="Formulario de inscripción para DiverMataró. Únete a nuestra comunidad sin cuotas de socio."
 >
   <Navigation />
-  
+
   <main id="main-content" class="flex-1">
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-green-600 to-green-800 text-white py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          Únete a nuestra asociación
-        </h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Únete a nuestra asociación</h1>
         <p class="text-xl mb-8 text-green-100 max-w-3xl mx-auto">
-          Formar parte de nuestra asociación es completamente gratuito. No pedimos cuotas de socio, 
+          Formar parte de nuestra asociación es completamente gratuito. No pedimos cuotas de socio,
           solo queremos construir una comunidad más inclusiva y accesible para todos.
         </p>
         <div class="flex justify-center">
@@ -67,17 +69,19 @@ const benefits = [
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Por qué unirte</h2>
           <p class="text-lg text-gray-600">Beneficios de formar parte de nuestra comunidad</p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit) => (
-            <div class="text-center">
-              <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <benefit.icon className="w-8 h-8" />
+          {
+            benefits.map((benefit) => (
+              <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <benefit.icon className="w-8 h-8" />
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h3>
+                <p class="text-gray-600 text-sm">{benefit.description}</p>
               </div>
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h3>
-              <p class="text-gray-600 text-sm">{benefit.description}</p>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -103,10 +107,12 @@ const benefits = [
               <h3 class="text-sm font-medium text-blue-900">Información importante</h3>
               <div class="mt-2 text-sm text-blue-700">
                 <p class="mb-2">
-                  <strong>Privacidad:</strong> Tus datos personales serán tratados conforme a la Ley de Protección de Datos.
+                  <strong>Privacidad:</strong> Tus datos personales serán tratados conforme a la Ley de
+                  Protección de Datos.
                 </p>
                 <p class="mb-2">
-                  <strong>Contacto:</strong> Nos pondremos en contacto contigo principalmente a través de WhatsApp.
+                  <strong>Contacto:</strong> Nos pondremos en contacto contigo principalmente a través
+                  de WhatsApp.
                 </p>
                 <p>
                   <strong>Gratuito:</strong> No hay cuotas de socio ni costes asociados a la membresía.
@@ -125,16 +131,18 @@ const benefits = [
           <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Prefieres contactar directamente?</h2>
           <p class="text-lg text-gray-600">También puedes unirte a través de estos canales</p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div class="bg-gray-50 rounded-lg p-6 text-center">
-            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4"
+            >
               <Phone className="w-6 h-6" />
             </div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">WhatsApp</h3>
             <p class="text-gray-600 mb-4">Escríbenos un mensaje y te explicamos cómo unirte</p>
-            <a 
-              href="https://wa.me/34600000000" 
+            <a
+              href="https://wa.me/34600000000"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
@@ -143,15 +151,17 @@ const benefits = [
               Contactar por WhatsApp
             </a>
           </div>
-          
+
           <div class="bg-gray-50 rounded-lg p-6 text-center">
-            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4"
+            >
               <Users className="w-6 h-6" />
             </div>
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Presencial</h3>
             <p class="text-gray-600 mb-4">Visítanos en nuestra sede y conócenos personalmente</p>
-            <a 
-              href="/contacto/" 
+            <a
+              href="/contacto/"
               class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
             >
               Ver ubicación
@@ -162,6 +172,6 @@ const benefits = [
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </BaseLayout>

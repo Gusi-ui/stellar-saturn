@@ -1,10 +1,10 @@
 ---
-title: "Día Internacional de las Personas con Discapacidad: Un día para la reflexión y la acción"
-description: "El 3 de diciembre celebramos el Día Internacional de las Personas con Discapacidad con actividades inclusivas y reivindicativas en Mataró."
+title: 'Día Internacional de las Personas con Discapacidad: Un día para la reflexión y la acción'
+description: 'El 3 de diciembre celebramos el Día Internacional de las Personas con Discapacidad con actividades inclusivas y reivindicativas en Mataró.'
 publishDate: 2024-12-03
-author: "DiverMataró"
-category: "Eventos"
-tags: ["día internacional", "discapacidad", "inclusión", "derechos"]
+author: 'DiverMataró'
+category: 'Eventos'
+tags: ['día internacional', 'discapacidad', 'inclusión', 'derechos']
 featured: true
 readingTime: 4
 ---
@@ -29,6 +29,7 @@ Este día no solo es una celebración, sino también una oportunidad para:
 **Hora**: 10:00 - 13:00  
 **Lugar**: Sede de la asociación  
 **Actividades**:
+
 - Visita guiada a nuestras instalaciones
 - Taller de sensibilización sobre diversidad funcional
 - Actividades lúdicas para toda la familia
@@ -48,16 +49,19 @@ Este día no solo es una celebración, sino también una oportunidad para:
 ## Nuestras reivindicaciones
 
 ### 1. Accesibilidad universal
+
 - **Transporte público accesible**: Todas las paradas y vehículos deben ser accesibles
 - **Edificios públicos**: Eliminación de barreras arquitectónicas
 - **Espacios verdes**: Parques y jardines accesibles para todos
 
 ### 2. Empleo inclusivo
+
 - **Cuotas de empleo**: Cumplimiento de la ley de reserva del 2% de puestos
 - **Formación adaptada**: Programas de formación accesibles
 - **Apoyo a empresas**: Incentivos para la contratación de personas con discapacidad
 
 ### 3. Educación inclusiva
+
 - **Recursos adecuados**: Personal y materiales específicos
 - **Apoyo individualizado**: Atención personalizada según necesidades
 - **Formación del profesorado**: Capacitación en diversidad funcional
@@ -73,16 +77,19 @@ Este día no solo es una celebración, sino también una oportunidad para:
 ## Cómo participar
 
 ### Como persona con discapacidad
+
 - **Únete a nuestra asociación**: Es gratuita y te mantendremos informado
 - **Participa en las actividades**: Tu voz es fundamental
 - **Comparte tu experiencia**: Ayuda a concienciar a otros
 
 ### Como familia o amigo
+
 - **Acompáñanos**: Tu apoyo es muy importante
 - **Difunde el mensaje**: Comparte nuestras reivindicaciones
 - **Colabora**: Hay muchas formas de ayudar
 
 ### Como ciudadano/a
+
 - **Asiste a los actos**: Tu presencia nos da visibilidad
 - **Infórmate**: Conoce nuestros derechos y necesidades
 - **Reivindica**: Exige una sociedad más inclusiva
@@ -90,11 +97,13 @@ Este día no solo es una celebración, sino también una oportunidad para:
 ## Recursos adicionales
 
 ### Documentación
+
 - [Carta de derechos de las personas con discapacidad](https://asociacionmataro.org/derechos)
 - [Guía de accesibilidad universal](https://asociacionmataro.org/accesibilidad)
 - [Protocolo de actuación ante discriminación](https://asociacionmataro.org/protocolo)
 
 ### Contacto
+
 - **WhatsApp**: +34 600 000 000
 - **Email**: info@asociacionmataro.org
 - **Teléfono**: +34 93 000 00 00
@@ -107,4 +116,4 @@ El Día Internacional de las Personas con Discapacidad no debería ser un día c
 
 ---
 
-*"No sobre nosotros sin nosotros"* - Lema del movimiento de derechos de las personas con discapacidad
+_"No sobre nosotros sin nosotros"_ - Lema del movimiento de derechos de las personas con discapacidad

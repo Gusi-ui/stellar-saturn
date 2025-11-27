@@ -1,10 +1,10 @@
 ---
-title: "Nuevo taller de terapia ocupacional para promover la autonomía personal"
-description: "Iniciamos un nuevo programa de terapia ocupacional diseñado para mejorar las habilidades de la vida diaria y fomentar la independencia personal."
+title: 'Nuevo taller de terapia ocupacional para promover la autonomía personal'
+description: 'Iniciamos un nuevo programa de terapia ocupacional diseñado para mejorar las habilidades de la vida diaria y fomentar la independencia personal.'
 publishDate: 2024-11-15
-author: "DiverMataró"
-category: "Actividades"
-tags: ["terapia ocupacional", "autonomía", "habilidades", "talleres"]
+author: 'DiverMataró'
+category: 'Actividades'
+tags: ['terapia ocupacional', 'autonomía', 'habilidades', 'talleres']
 featured: true
 readingTime: 3
 ---
@@ -27,16 +27,19 @@ Este programa está diseñado para:
 El taller se estructura en varios módulos prácticos:
 
 ### 1. Habilidades de autocuidado
+
 - Técnicas de higiene personal adaptadas
 - Manejo de utensilios de alimentación
 - Selección y uso de ropa adecuada
 
 ### 2. Gestión del hogar
+
 - Organización del espacio personal
 - Uso seguro de electrodomésticos
 - Planificación de tareas domésticas
 
 ### 3. Comunicación y socialización
+
 - Técnicas de comunicación efectiva
 - Resolución de conflictos
 - Participación en actividades grupales
@@ -71,10 +74,11 @@ Para participar en este taller:
 Las plazas son limitadas. Si estás interesado en participar en el próximo grupo, no dudes en contactarnos.
 
 **Para más información:**
+
 - WhatsApp: +34 600 000 000
 - Email: info@divermataro.org
 - Presencial: Visítanos en nuestra sede
 
 ---
 
-*La terapia ocupacional es una disciplina que promueve la salud y el bienestar a través de la ocupación. Su objetivo principal es ayudar a las personas a participar en las actividades de la vida diaria.*
+_La terapia ocupacional es una disciplina que promueve la salud y el bienestar a través de la ocupación. Su objetivo principal es ayudar a las personas a participar en las actividades de la vida diaria._

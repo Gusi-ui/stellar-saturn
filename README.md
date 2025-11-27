@@ -42,13 +42,13 @@ El sitio estará disponible en `http://localhost:4321`
 
 ## 🚀 Comandos
 
-| Comando                | Acción                                         |
-| :--------------------- | :--------------------------------------------- |
-| `npm install`          | Instala las dependencias                       |
-| `npm run dev`          | Inicia el servidor de desarrollo en `localhost:4321` |
-| `npm run build`        | Construye el sitio para producción en `./dist/` |
-| `npm run preview`      | Vista previa del build antes de deployar       |
-| `npm run astro ...`    | Ejecuta comandos de Astro CLI                  |
+| Comando             | Acción                                               |
+| :------------------ | :--------------------------------------------------- |
+| `npm install`       | Instala las dependencias                             |
+| `npm run dev`       | Inicia el servidor de desarrollo en `localhost:4321` |
+| `npm run build`     | Construye el sitio para producción en `./dist/`      |
+| `npm run preview`   | Vista previa del build antes de deployar             |
+| `npm run astro ...` | Ejecuta comandos de Astro CLI                        |
 
 ## 🌐 Despliegue
 
@@ -59,6 +59,7 @@ Este proyecto está configurado para desplegarse en **Netlify**, aunque también
 El proyecto incluye configuración lista para Netlify y está optimizado para el **plan gratuito**.
 
 #### Límites del Plan Gratuito de Netlify:
+
 - ✅ **300 minutos de build/mes** - Suficiente para ~10-15 despliegues al mes
 - ✅ **100GB de bandwidth/mes** - Más que suficiente para un sitio de asociación
 - ✅ **Funciones serverless** - Timeout de 10 segundos (suficiente para nuestro endpoint)
@@ -101,6 +102,7 @@ El proyecto incluye configuración lista para Netlify y está optimizado para el
 #### Monitoreo del Uso:
 
 Puedes monitorear tu uso en **Team settings** → **Usage**:
+
 - Build minutes utilizados
 - Bandwidth consumido
 - Funciones invocadas
@@ -166,6 +168,7 @@ El proyecto está configurado para usar **Supabase** como base de datos para alm
 #### Estructura de la Base de Datos
 
 La tabla `registrations` almacena:
+
 - `id`: UUID único del registro
 - `full_name`: Nombre completo
 - `email`: Correo electrónico (único)
@@ -226,6 +229,7 @@ stellar-saturn/
 ## 🎨 Características de Diseño
 
 ### Navegación
+
 - Logo con efecto de resplandor al hover
 - Enlaces con estado activo según la página actual
 - Efecto glassmorphism con backdrop-blur
@@ -233,12 +237,14 @@ stellar-saturn/
 - Menú móvil responsive
 
 ### Modo Oscuro
+
 - Toggle automático con preferencia del sistema
 - Persistencia en localStorage
 - Transiciones suaves entre temas
 - Iconos dinámicos (sol/luna)
 
 ### Accesibilidad
+
 - Navegación por teclado completa
 - ARIA labels en todos los elementos interactivos
 - Skip to main content link
@@ -262,6 +268,7 @@ Este proyecto está bajo una licencia privada. Todos los derechos reservados © 
 ## 📧 Contacto
 
 **DiverMataró**
+
 - Web: [https://asociacionmataro.org](https://asociacionmataro.org)
 - Email: info@asociacionmataro.org
 - WhatsApp: +34 600 000 000

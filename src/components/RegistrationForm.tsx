@@ -9,12 +9,12 @@ const registrationSchema = z.object({
   email: z.string().email('Email inválido'),
   phone: z.string().regex(/^[0-9]{9}$/, 'El teléfono debe tener 9 dígitos'),
   functionalDiversity: z.enum(['visual', 'auditory', 'motor', 'cognitive', 'other', 'none'], {
-    errorMap: () => ({ message: 'Por favor, selecciona una opción' })
+    errorMap: () => ({ message: 'Por favor, selecciona una opción' }),
   }),
   relationship: z.enum(['person', 'family', 'professional', 'volunteer'], {
-    errorMap: () => ({ message: 'Por favor, selecciona una opción' })
+    errorMap: () => ({ message: 'Por favor, selecciona una opción' }),
   }),
-  consent: z.boolean().refine(val => val === true, 'Debes aceptar la política de privacidad'),
+  consent: z.boolean().refine((val) => val === true, 'Debes aceptar la política de privacidad'),
   newsletter: z.boolean().optional(),
 });
 
@@ -47,14 +47,14 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-      
+
       const responseData = await response.json();
-      
+
       if (response.ok) {
         setSubmitStatus('success');
         reset();
         onSuccess?.();
-        
+
         // Redirect after 3 seconds
         setTimeout(() => {
           window.location.href = '/gracias-por-inscribirte';
@@ -74,11 +74,14 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white p-8 rounded-lg shadow-sm">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="space-y-6 bg-white p-8 rounded-lg shadow-sm"
+      >
         {/* Personal Information */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-gray-900">Información Personal</h3>
-          
+
           {/* Full Name */}
           <div>
             <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
@@ -163,11 +166,16 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
 
         {/* Diversity Information */}
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-gray-900">Información sobre diversidad funcional</h3>
-          
+          <h3 className="text-lg font-semibold text-gray-900">
+            Información sobre diversidad funcional
+          </h3>
+
           {/* Functional Diversity */}
           <div>
-            <label htmlFor="functionalDiversity" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="functionalDiversity"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Tipo de diversidad funcional
             </label>
             <select
@@ -175,7 +183,9 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
               {...register('functionalDiversity')}
               className={`block w-full px-3 py-2 border ${errors.functionalDiversity ? 'border-red-300' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500`}
               aria-invalid={errors.functionalDiversity ? 'true' : 'false'}
-              aria-describedby={errors.functionalDiversity ? 'functionalDiversity-error' : undefined}
+              aria-describedby={
+                errors.functionalDiversity ? 'functionalDiversity-error' : undefined
+              }
             >
               <option value="">Selecciona una opción (opcional)</option>
               <option value="visual">Visual</option>
@@ -186,7 +196,10 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
               <option value="none">No tengo diversidad funcional</option>
             </select>
             {errors.functionalDiversity && (
-              <p id="functionalDiversity-error" className="mt-1 text-sm text-red-600 flex items-center">
+              <p
+                id="functionalDiversity-error"
+                className="mt-1 text-sm text-red-600 flex items-center"
+              >
                 <AlertCircle className="w-4 h-4 mr-1" />
                 {errors.functionalDiversity.message}
               </p>
@@ -238,7 +251,8 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
                 Acepto la política de privacidad y el tratamiento de mis datos personales *
               </label>
               <p className="text-gray-500">
-                Tus datos serán utilizados únicamente para gestionar tu inscripción y mantenerte informado sobre las actividades de la asociación.
+                Tus datos serán utilizados únicamente para gestionar tu inscripción y mantenerte
+                informado sobre las actividades de la asociación.
               </p>
             </div>
           </div>
@@ -274,7 +288,8 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
               <div className="ml-3">
                 <h3 className="text-sm font-medium text-green-800">¡Inscripción enviada!</h3>
                 <p className="text-sm text-green-700 mt-1">
-                  Gracias por tu interés en nuestra asociación. Nos pondremos en contacto contigo pronto.
+                  Gracias por tu interés en nuestra asociación. Nos pondremos en contacto contigo
+                  pronto.
                 </p>
               </div>
             </div>
