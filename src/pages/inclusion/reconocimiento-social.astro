@@ -43,7 +43,7 @@ const impacto = [
 >
   <!-- Hero Section -->
   <section
-    class="relative pt-32 pb-20 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-900 dark:to-yellow-900/20 overflow-hidden"
+    class="relative pt-32 pb-20 bg-linear-to-br from-yellow-50 to-orange-50 dark:from-gray-900 dark:to-yellow-900/20 overflow-hidden"
   >
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5">
@@ -56,11 +56,11 @@ const impacto = [
 
     <!-- Decorative Elements -->
     <div
-      class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-full blur-3xl"
+      class="absolute top-20 right-20 w-72 h-72 bg-linear-to-br from-yellow-400/20 to-orange-400/20 rounded-full blur-3xl"
     >
     </div>
     <div
-      class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-amber-400/20 to-yellow-400/20 rounded-full blur-3xl"
+      class="absolute bottom-20 left-20 w-96 h-96 bg-linear-to-tr from-amber-400/20 to-yellow-400/20 rounded-full blur-3xl"
     >
     </div>
 
@@ -71,7 +71,7 @@ const impacto = [
           <li>
             <a
               href="/"
-              class="text-gray-600 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors"
+              class="text-gray-600 dark:text-gray-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors"
               >Inicio</a
             >
           </li>
@@ -84,7 +84,7 @@ const impacto = [
         <div>
           <!-- Icon Badge -->
           <div
-            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30 rounded-full mb-6"
+            class="inline-flex items-center px-4 py-2 bg-linear-to-r from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30 rounded-full mb-6"
           >
             <Award className="w-5 h-5 text-yellow-600 mr-2" />
             <span class="text-sm font-semibold text-yellow-700 dark:text-yellow-300"
@@ -96,7 +96,7 @@ const impacto = [
             Visibilizando capacidades
           </h1>
 
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p class="text-xl text-gray-600 dark:text-gray-100 mb-8">
             Trabajamos para cambiar la percepción social sobre la diversidad funcional, promoviendo
             el reconocimiento del valor, las capacidades y los logros de las personas.
           </p>
@@ -104,7 +104,7 @@ const impacto = [
           <div class="flex flex-col sm:flex-row gap-4">
             <a
               href="/contacto/"
-              class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-yellow-600 to-orange-600 text-white font-semibold rounded-2xl hover:from-yellow-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              class="inline-flex items-center justify-center px-8 py-4 bg-linear-to-r from-yellow-600 to-orange-600 text-white font-semibold rounded-2xl hover:from-yellow-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               Colabora con nosotros
               <Mail className="w-5 h-5 ml-2" />
@@ -121,7 +121,7 @@ const impacto = [
         <!-- Image Placeholder -->
         <div class="relative">
           <div
-            class="aspect-square bg-gradient-to-br from-yellow-400 to-orange-500 rounded-3xl shadow-2xl flex items-center justify-center"
+            class="aspect-square bg-linear-to-br from-yellow-400 to-orange-500 rounded-3xl shadow-2xl flex items-center justify-center"
           >
             <Award className="w-32 h-32 text-white/80" />
           </div>
@@ -137,7 +137,7 @@ const impacto = [
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Nuestros Programas
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Desarrollamos diferentes programas para promover el reconocimiento social y cambiar
           percepciones.
         </p>
@@ -152,14 +152,14 @@ const impacto = [
               data-aos-delay={index * 100}
             >
               <div
-                class={`w-16 h-16 bg-gradient-to-br ${programa.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                class={`w-16 h-16 bg-linear-to-br ${programa.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
               >
                 <programa.icon className="w-8 h-8 text-white" />
               </div>
               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 {programa.title}
               </h3>
-              <p class="text-gray-600 dark:text-gray-300">{programa.description}</p>
+              <p class="text-gray-600 dark:text-gray-100">{programa.description}</p>
             </div>
           ))
         }
@@ -169,13 +169,13 @@ const impacto = [
 
   <!-- Impacto Section -->
   <section
-    class="py-32 bg-gradient-to-br from-gray-50 to-yellow-50 dark:from-gray-800 dark:to-yellow-900/10"
+    class="py-32 bg-linear-to-br from-gray-50 to-yellow-50 dark:from-gray-800 dark:to-yellow-900/10"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="relative">
           <div
-            class="aspect-square bg-gradient-to-br from-yellow-400 to-orange-500 rounded-3xl shadow-2xl flex items-center justify-center"
+            class="aspect-square bg-linear-to-br from-yellow-400 to-orange-500 rounded-3xl shadow-2xl flex items-center justify-center"
           >
             <Star className="w-32 h-32 text-white/80" />
           </div>
@@ -185,7 +185,7 @@ const impacto = [
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Nuestro impacto
           </h2>
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p class="text-xl text-gray-600 dark:text-gray-100 mb-8">
             Los resultados de nuestro trabajo de sensibilización y visibilización hablan por sí
             mismos.
           </p>
@@ -198,10 +198,10 @@ const impacto = [
                   data-aos="fade-left"
                   data-aos-delay={index * 50}
                 >
-                  <div class="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mt-1">
+                  <div class="shrink-0 w-6 h-6 bg-linear-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mt-1">
                     <Star className="w-4 h-4 text-white" />
                   </div>
-                  <p class="text-lg text-gray-700 dark:text-gray-300">{item}</p>
+                  <p class="text-lg text-gray-700 dark:text-gray-100">{item}</p>
                 </div>
               ))
             }
@@ -218,7 +218,7 @@ const impacto = [
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Historias de éxito
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Personas con diversidad funcional que han conseguido el reconocimiento que merecen.
         </p>
       </div>
@@ -246,20 +246,20 @@ const impacto = [
             },
           ].map((testimonio, index) => (
             <div
-              class="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-800 dark:to-yellow-900/10 rounded-3xl p-8 shadow-lg"
+              class="bg-linear-to-br from-yellow-50 to-orange-50 dark:from-gray-800 dark:to-yellow-900/10 rounded-3xl p-8 shadow-lg"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
               <div class="flex items-center mb-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mr-4">
+                <div class="w-12 h-12 bg-linear-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mr-4">
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 class="font-bold text-gray-900 dark:text-white">{testimonio.name}</h3>
-                  <p class="text-sm text-gray-600 dark:text-gray-400">{testimonio.role}</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-300">{testimonio.role}</p>
                 </div>
               </div>
-              <p class="text-gray-700 dark:text-gray-300 italic">"{testimonio.quote}"</p>
+              <p class="text-gray-700 dark:text-gray-100 italic">"{testimonio.quote}"</p>
             </div>
           ))
         }
@@ -268,7 +268,7 @@ const impacto = [
   </section>
 
   <!-- CTA Section -->
-  <section class="py-32 bg-gradient-to-r from-yellow-600 to-orange-600 relative overflow-hidden">
+  <section class="py-32 bg-linear-to-r from-yellow-600 to-orange-600 relative overflow-hidden">
     <div class="absolute inset-0 opacity-10">
       <div
         class="absolute inset-0"

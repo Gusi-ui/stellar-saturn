@@ -48,7 +48,7 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
         body: JSON.stringify(data),
       });
 
-      const responseData = await response.json();
+      await response.json();
 
       if (response.ok) {
         setSubmitStatus('success');
@@ -60,12 +60,9 @@ export default function RegistrationForm({ onSuccess }: RegistrationFormProps) {
           window.location.href = '/gracias-por-inscribirte';
         }, 3000);
       } else {
-        // Mostrar el error específico del servidor
-        console.error('Error del servidor:', responseData);
         setSubmitStatus('error');
       }
-    } catch (error) {
-      console.error('Error al enviar formulario:', error);
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

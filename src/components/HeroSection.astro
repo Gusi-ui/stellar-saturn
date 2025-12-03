@@ -12,7 +12,7 @@ import {
 ---
 
 <section
-  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-orange-900 dark:to-amber-900"
+  class="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-orange-50 via-amber-50 to-yellow-50 dark:from-gray-900 dark:via-orange-900 dark:to-amber-900"
 >
   {/* Video de fondo con parallax */}
   <div class="absolute inset-0 overflow-hidden">
@@ -41,7 +41,7 @@ import {
     </div>
 
     {/* Overlay oscuro semitransparente para mejorar legibilidad del texto */}
-    <div class="absolute inset-0 bg-gradient-to-br from-black/50 via-black/40 to-black/50"></div>
+    <div class="absolute inset-0 bg-linear-to-br from-black/50 via-black/40 to-black/50"></div>
   </div>
 
   {/* Elementos flotantes decorativos */}
@@ -89,7 +89,7 @@ import {
       >
         <span class="block animate-fade-in-up">Construyendo un mundo</span>
         <span
-          class="block bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400 bg-clip-text text-transparent animate-fade-in-up delay-200"
+          class="block bg-linear-to-r from-orange-400 via-amber-400 to-yellow-400 bg-clip-text text-transparent animate-fade-in-up delay-200"
           style="text-shadow: 2px 2px 12px rgba(255,140,0,0.8);"
         >
           más inclusivo
@@ -112,7 +112,7 @@ import {
       >
         <a
           href="/inscripcion/"
-          class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white font-bold rounded-2xl hover:from-orange-700 hover:to-amber-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-orange-500/50"
+          class="group inline-flex items-center px-8 py-4 bg-linear-to-r from-orange-600 to-amber-600 text-white font-bold rounded-2xl hover:from-orange-700 hover:to-amber-700 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-orange-500/50"
         >
           <Heart className="w-5 h-5 mr-3 group-hover:animate-bounce" />
           Únete a nuestra asociación
@@ -133,51 +133,66 @@ import {
         class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto animate-fade-in-up delay-600"
       >
         {/* Accesibilidad */}
-        <a href="/inclusion/accesibilidad-universal/" class="text-center group cursor-pointer">
+        <a
+          href="/inclusion/accesibilidad-universal/"
+          class="text-center group cursor-pointer block p-4 rounded-2xl hover:bg-black/30 transition-all duration-300"
+        >
           <div
-            class="w-20 h-20 bg-white/30 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-white/50 group-hover:scale-110 group-hover:bg-orange-500/80 group-hover:border-orange-400 transition-all duration-300 shadow-2xl"
+            class="w-20 h-20 bg-white/30 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-white/50 group-hover:scale-110 group-hover:bg-orange-500 group-hover:border-orange-400 transition-all duration-300 shadow-2xl"
           >
             <Accessibility className="w-10 h-10 text-white transition-colors" />
           </div>
           <div
-            class="text-2xl font-bold text-white mb-2 group-hover:text-orange-200 transition-colors"
-            style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);"
+            class="text-2xl font-bold text-white mb-2 transition-colors"
+            style="text-shadow: 2px 2px 10px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,0.8);"
           >
             Accesibilidad
           </div>
-          <div class="text-white/90 text-sm drop-shadow-lg">Universal para todos</div>
+          <div class="text-white text-sm" style="text-shadow: 1px 1px 6px rgba(0,0,0,0.9);">
+            Universal para todos
+          </div>
         </a>
 
         {/* Inclusión */}
-        <a href="/inclusion/comunidad-inclusiva/" class="text-center group cursor-pointer">
+        <a
+          href="/inclusion/comunidad-inclusiva/"
+          class="text-center group cursor-pointer block p-4 rounded-2xl hover:bg-black/30 transition-all duration-300"
+        >
           <div
-            class="w-20 h-20 bg-white/30 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-white/50 group-hover:scale-110 group-hover:bg-amber-500/80 group-hover:border-amber-400 transition-all duration-300 shadow-2xl"
+            class="w-20 h-20 bg-white/30 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-white/50 group-hover:scale-110 group-hover:bg-amber-500 group-hover:border-amber-400 transition-all duration-300 shadow-2xl"
           >
             <HandHeart className="w-10 h-10 text-white transition-colors" />
           </div>
           <div
-            class="text-2xl font-bold text-white mb-2 group-hover:text-amber-200 transition-colors"
-            style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);"
+            class="text-2xl font-bold text-white mb-2 transition-colors"
+            style="text-shadow: 2px 2px 10px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,0.8);"
           >
             Inclusión
           </div>
-          <div class="text-white/90 text-sm drop-shadow-lg">Participación plena</div>
+          <div class="text-white text-sm" style="text-shadow: 1px 1px 6px rgba(0,0,0,0.9);">
+            Participación plena
+          </div>
         </a>
 
         {/* Integración */}
-        <a href="/inclusion/apoyo-personalizado/" class="text-center group cursor-pointer">
+        <a
+          href="/inclusion/apoyo-personalizado/"
+          class="text-center group cursor-pointer block p-4 rounded-2xl hover:bg-black/30 transition-all duration-300"
+        >
           <div
-            class="w-20 h-20 bg-white/30 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-white/50 group-hover:scale-110 group-hover:bg-yellow-500/80 group-hover:border-yellow-400 transition-all duration-300 shadow-2xl"
+            class="w-20 h-20 bg-white/30 backdrop-blur-xl rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-white/50 group-hover:scale-110 group-hover:bg-yellow-500 group-hover:border-yellow-400 transition-all duration-300 shadow-2xl"
           >
             <UserPlus className="w-10 h-10 text-white transition-colors" />
           </div>
           <div
-            class="text-2xl font-bold text-white mb-2 group-hover:text-yellow-200 transition-colors"
-            style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);"
+            class="text-2xl font-bold text-white mb-2 transition-colors"
+            style="text-shadow: 2px 2px 10px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,0.8);"
           >
             Integración
           </div>
-          <div class="text-white/90 text-sm drop-shadow-lg">Comunidad unida</div>
+          <div class="text-white text-sm" style="text-shadow: 1px 1px 6px rgba(0,0,0,0.9);">
+            Comunidad unida
+          </div>
         </a>
       </div>
     </div>
@@ -328,21 +343,16 @@ import {
       const playPromise = video.play();
 
       if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            console.log('Video playing successfully');
-          })
-          .catch((error) => {
-            console.log('Auto-play prevented:', error);
-            // Intentar reproducir en interacción del usuario
-            document.addEventListener(
-              'click',
-              () => {
-                video.play();
-              },
-              { once: true }
-            );
-          });
+        playPromise.catch(() => {
+          // Intentar reproducir en interacción del usuario si autoplay falla
+          document.addEventListener(
+            'click',
+            () => {
+              video.play();
+            },
+            { once: true }
+          );
+        });
       }
 
       // Pausar cuando no esté visible

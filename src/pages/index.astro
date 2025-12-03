@@ -78,7 +78,7 @@ const upcomingEvents = [
       <!-- Section Header -->
       <div class="text-center mb-20">
         <div
-          class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30 rounded-full mb-6"
+          class="inline-flex items-center px-4 py-2 bg-linear-to-r from-green-100 to-blue-100 dark:from-green-900/30 dark:to-blue-900/30 rounded-full mb-6"
         >
           <svg
             class="w-5 h-5 text-green-600 mr-2"
@@ -102,7 +102,7 @@ const upcomingEvents = [
           No te pierdas nuestras actividades
         </h2>
 
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Participa en nuestros talleres, eventos y actividades diseñadas para promover la inclusión
           y el bienestar.
         </p>
@@ -119,11 +119,11 @@ const upcomingEvents = [
             >
               {/* Event Date Badge */}
               <div class="relative">
-                <div class="absolute top-4 right-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold z-10">
+                <div class="absolute top-4 right-4 bg-linear-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold z-10">
                   {event.date}
                 </div>
                 {/* Event Image Placeholder */}
-                <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                <div class="h-48 bg-linear-to-br from-blue-400 to-purple-500 flex items-center justify-center">
                   <svg
                     class="w-16 h-16 text-white/80"
                     fill="none"
@@ -145,10 +145,10 @@ const upcomingEvents = [
                 <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors">
                   {event.title}
                 </h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-4">{event.description}</p>
+                <p class="text-gray-600 dark:text-gray-100 mb-4">{event.description}</p>
 
                 {/* Event Details */}
-                <div class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                <div class="space-y-2 text-sm text-gray-500 dark:text-gray-300">
                   <div class="flex items-center">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
@@ -188,7 +188,7 @@ const upcomingEvents = [
       <div class="text-center">
         <a
           href="/servicios/#calendario"
-          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          class="inline-flex items-center px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
           Ver calendario completo
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -202,15 +202,15 @@ const upcomingEvents = [
 
   <!-- Blog Section -->
   <section
-    class="py-32 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900 relative overflow-hidden"
+    class="py-32 bg-linear-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900 relative overflow-hidden"
   >
     <!-- Background Elements -->
     <div
-      class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
+      class="absolute top-20 right-20 w-72 h-72 bg-linear-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
     >
     </div>
     <div
-      class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"
+      class="absolute bottom-20 left-20 w-96 h-96 bg-linear-to-tr from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"
     >
     </div>
 
@@ -240,7 +240,7 @@ const upcomingEvents = [
           Novedades y actualidad
         </h2>
 
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Entérate de las últimas noticias, eventos y actividades de nuestra asociación.
         </p>
       </div>
@@ -255,7 +255,7 @@ const upcomingEvents = [
               data-aos-delay={index * 100}
             >
               {/* Post Image Placeholder */}
-              <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+              <div class="h-48 bg-linear-to-br from-green-400 to-blue-500 flex items-center justify-center">
                 <svg
                   class="w-16 h-16 text-white/80"
                   fill="none"
@@ -277,7 +277,7 @@ const upcomingEvents = [
                   <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">
                     {post.frontmatter.category}
                   </span>
-                  <time class="text-sm text-gray-500 dark:text-gray-400">
+                  <time class="text-sm text-gray-500 dark:text-gray-300">
                     {new Date(post.frontmatter.date).toLocaleDateString('es-ES', {
                       day: 'numeric',
                       month: 'long',
@@ -290,7 +290,7 @@ const upcomingEvents = [
                   {post.frontmatter.title}
                 </h3>
 
-                <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                <p class="text-gray-600 dark:text-gray-100 mb-4 line-clamp-3">
                   {post.frontmatter.excerpt || post.frontmatter.description}
                 </p>
 
@@ -323,7 +323,7 @@ const upcomingEvents = [
       <div class="text-center">
         <a
           href="/blog/"
-          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-2xl hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          class="inline-flex items-center px-8 py-4 bg-linear-to-r from-green-600 to-blue-600 text-white font-semibold rounded-2xl hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
           Ver todas las noticias
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

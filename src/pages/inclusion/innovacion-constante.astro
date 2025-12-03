@@ -43,7 +43,7 @@ const innovaciones = [
 >
   <!-- Hero Section -->
   <section
-    class="relative pt-32 pb-20 bg-gradient-to-br from-teal-50 to-blue-50 dark:from-gray-900 dark:to-teal-900/20 overflow-hidden"
+    class="relative pt-32 pb-20 bg-linear-to-br from-teal-50 to-blue-50 dark:from-gray-900 dark:to-teal-900/20 overflow-hidden"
   >
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5">
@@ -56,11 +56,11 @@ const innovaciones = [
 
     <!-- Decorative Elements -->
     <div
-      class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-teal-400/20 to-blue-400/20 rounded-full blur-3xl"
+      class="absolute top-20 right-20 w-72 h-72 bg-linear-to-br from-teal-400/20 to-blue-400/20 rounded-full blur-3xl"
     >
     </div>
     <div
-      class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-cyan-400/20 to-teal-400/20 rounded-full blur-3xl"
+      class="absolute bottom-20 left-20 w-96 h-96 bg-linear-to-tr from-cyan-400/20 to-teal-400/20 rounded-full blur-3xl"
     >
     </div>
 
@@ -71,7 +71,7 @@ const innovaciones = [
           <li>
             <a
               href="/"
-              class="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+              class="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
               >Inicio</a
             >
           </li>
@@ -84,7 +84,7 @@ const innovaciones = [
         <div>
           <!-- Icon Badge -->
           <div
-            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-100 to-blue-100 dark:from-teal-900/30 dark:to-blue-900/30 rounded-full mb-6"
+            class="inline-flex items-center px-4 py-2 bg-linear-to-r from-teal-100 to-blue-100 dark:from-teal-900/30 dark:to-blue-900/30 rounded-full mb-6"
           >
             <Sparkles className="w-5 h-5 text-teal-600 mr-2" />
             <span class="text-sm font-semibold text-teal-700 dark:text-teal-300"
@@ -96,7 +96,7 @@ const innovaciones = [
             Innovando para el futuro
           </h1>
 
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p class="text-xl text-gray-600 dark:text-gray-100 mb-8">
             En DiverMataró apostamos por la innovación constante, buscando nuevas formas de mejorar
             la calidad de vida de las personas con diversidad funcional a través de la tecnología,
             la investigación y metodologías innovadoras.
@@ -105,7 +105,7 @@ const innovaciones = [
           <div class="flex flex-col sm:flex-row gap-4">
             <a
               href="/contacto/"
-              class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-semibold rounded-2xl hover:from-teal-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              class="inline-flex items-center justify-center px-8 py-4 bg-linear-to-r from-teal-600 to-blue-600 text-white font-semibold rounded-2xl hover:from-teal-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               Colabora en innovación
               <Mail className="w-5 h-5 ml-2" />
@@ -122,7 +122,7 @@ const innovaciones = [
         <!-- Image Placeholder -->
         <div class="relative">
           <div
-            class="aspect-square bg-gradient-to-br from-teal-400 to-blue-500 rounded-3xl shadow-2xl flex items-center justify-center"
+            class="aspect-square bg-linear-to-br from-teal-400 to-blue-500 rounded-3xl shadow-2xl flex items-center justify-center"
           >
             <Sparkles className="w-32 h-32 text-white/80" />
           </div>
@@ -138,7 +138,7 @@ const innovaciones = [
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Líneas de Innovación
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Trabajamos en diferentes áreas de innovación para impulsar la inclusión y mejorar la
           calidad de vida.
         </p>
@@ -153,14 +153,14 @@ const innovaciones = [
               data-aos-delay={index * 100}
             >
               <div
-                class={`w-16 h-16 bg-gradient-to-br ${proyecto.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                class={`w-16 h-16 bg-linear-to-br ${proyecto.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
               >
                 <proyecto.icon className="w-8 h-8 text-white" />
               </div>
               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 {proyecto.title}
               </h3>
-              <p class="text-gray-600 dark:text-gray-300">{proyecto.description}</p>
+              <p class="text-gray-600 dark:text-gray-100">{proyecto.description}</p>
             </div>
           ))
         }
@@ -170,13 +170,13 @@ const innovaciones = [
 
   <!-- Innovaciones Section -->
   <section
-    class="py-32 bg-gradient-to-br from-gray-50 to-teal-50 dark:from-gray-800 dark:to-teal-900/10"
+    class="py-32 bg-linear-to-br from-gray-50 to-teal-50 dark:from-gray-800 dark:to-teal-900/10"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="relative">
           <div
-            class="aspect-square bg-gradient-to-br from-teal-400 to-blue-500 rounded-3xl shadow-2xl flex items-center justify-center"
+            class="aspect-square bg-linear-to-br from-teal-400 to-blue-500 rounded-3xl shadow-2xl flex items-center justify-center"
           >
             <Rocket className="w-32 h-32 text-white/80" />
           </div>
@@ -186,7 +186,7 @@ const innovaciones = [
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Innovaciones en desarrollo
           </h2>
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p class="text-xl text-gray-600 dark:text-gray-100 mb-8">
             Actualmente estamos trabajando en varios proyectos innovadores que transformarán la
             forma de apoyar a las personas con diversidad funcional.
           </p>
@@ -199,10 +199,10 @@ const innovaciones = [
                   data-aos="fade-left"
                   data-aos-delay={index * 50}
                 >
-                  <div class="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-teal-500 to-blue-500 rounded-full flex items-center justify-center mt-1">
+                  <div class="shrink-0 w-6 h-6 bg-linear-to-br from-teal-500 to-blue-500 rounded-full flex items-center justify-center mt-1">
                     <Zap className="w-4 h-4 text-white" />
                   </div>
-                  <p class="text-lg text-gray-700 dark:text-gray-300">{innovacion}</p>
+                  <p class="text-lg text-gray-700 dark:text-gray-100">{innovacion}</p>
                 </div>
               ))
             }
@@ -219,7 +219,7 @@ const innovaciones = [
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Colaboraciones
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Trabajamos con universidades, centros de investigación y empresas tecnológicas para
           impulsar la innovación.
         </p>
@@ -250,13 +250,13 @@ const innovaciones = [
             },
           ].map((colaboracion, index) => (
             <div class="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
-              <div class="inline-flex w-16 h-16 bg-gradient-to-br from-teal-500 to-blue-500 rounded-2xl items-center justify-center mb-4">
+              <div class="inline-flex w-16 h-16 bg-linear-to-br from-teal-500 to-blue-500 rounded-2xl items-center justify-center mb-4">
                 <colaboracion.icon className="w-8 h-8 text-white" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
                 {colaboracion.title}
               </h3>
-              <p class="text-gray-600 dark:text-gray-300">{colaboracion.description}</p>
+              <p class="text-gray-600 dark:text-gray-100">{colaboracion.description}</p>
             </div>
           ))
         }
@@ -266,14 +266,14 @@ const innovaciones = [
 
   <!-- Impacto Section -->
   <section
-    class="py-32 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/10"
+    class="py-32 bg-linear-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/10"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Impacto de la innovación
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Nuestros proyectos innovadores están generando un impacto real en la vida de las personas.
         </p>
       </div>
@@ -302,11 +302,11 @@ const innovaciones = [
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div class="text-5xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent mb-2">
+              <div class="text-5xl font-bold bg-linear-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent mb-2">
                 {stat.number}
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{stat.label}</h3>
-              <p class="text-gray-600 dark:text-gray-300">{stat.description}</p>
+              <p class="text-gray-600 dark:text-gray-100">{stat.description}</p>
             </div>
           ))
         }
@@ -315,7 +315,7 @@ const innovaciones = [
   </section>
 
   <!-- CTA Section -->
-  <section class="py-32 bg-gradient-to-r from-teal-600 to-blue-600 relative overflow-hidden">
+  <section class="py-32 bg-linear-to-r from-teal-600 to-blue-600 relative overflow-hidden">
     <div class="absolute inset-0 opacity-10">
       <div
         class="absolute inset-0"

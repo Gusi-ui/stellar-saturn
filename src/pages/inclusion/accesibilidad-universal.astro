@@ -52,7 +52,7 @@ const areas = [
 >
   <!-- Hero Section -->
   <section
-    class="relative pt-32 pb-20 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-900 dark:to-amber-900/20 overflow-hidden"
+    class="relative pt-32 pb-20 bg-linear-to-br from-amber-50 to-orange-50 dark:from-gray-900 dark:to-amber-900/20 overflow-hidden"
   >
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5">
@@ -65,11 +65,11 @@ const areas = [
 
     <!-- Decorative Elements -->
     <div
-      class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-amber-400/20 to-orange-400/20 rounded-full blur-3xl"
+      class="absolute top-20 right-20 w-72 h-72 bg-linear-to-br from-amber-400/20 to-orange-400/20 rounded-full blur-3xl"
     >
     </div>
     <div
-      class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-orange-400/20 to-amber-400/20 rounded-full blur-3xl"
+      class="absolute bottom-20 left-20 w-96 h-96 bg-linear-to-tr from-orange-400/20 to-amber-400/20 rounded-full blur-3xl"
     >
     </div>
 
@@ -80,7 +80,7 @@ const areas = [
           <li>
             <a
               href="/"
-              class="text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+              class="text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
               >Inicio</a
             >
           </li>
@@ -93,7 +93,7 @@ const areas = [
         <div>
           <!-- Icon Badge -->
           <div
-            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-full mb-6"
+            class="inline-flex items-center px-4 py-2 bg-linear-to-r from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-full mb-6"
           >
             <Accessibility className="w-5 h-5 text-amber-600 mr-2" />
             <span class="text-sm font-semibold text-amber-700 dark:text-amber-300"
@@ -105,7 +105,7 @@ const areas = [
             Un mundo accesible para todos
           </h1>
 
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p class="text-xl text-gray-600 dark:text-gray-100 mb-8">
             Trabajamos para eliminar barreras y crear entornos accesibles que permitan la
             participación plena de todas las personas, independientemente de sus capacidades.
           </p>
@@ -113,7 +113,7 @@ const areas = [
           <div class="flex flex-col sm:flex-row gap-4">
             <a
               href="/contacto/"
-              class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold rounded-2xl hover:from-amber-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              class="inline-flex items-center justify-center px-8 py-4 bg-linear-to-r from-amber-600 to-orange-600 text-white font-semibold rounded-2xl hover:from-amber-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               Solicita una auditoría
               <Mail className="w-5 h-5 ml-2" />
@@ -130,7 +130,7 @@ const areas = [
         <!-- Image Placeholder -->
         <div class="relative">
           <div
-            class="aspect-square bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl shadow-2xl flex items-center justify-center"
+            class="aspect-square bg-linear-to-br from-amber-400 to-orange-500 rounded-3xl shadow-2xl flex items-center justify-center"
           >
             <Accessibility className="w-32 h-32 text-white/80" />
           </div>
@@ -146,7 +146,7 @@ const areas = [
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Nuestros Servicios
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Ofrecemos servicios especializados para promover la accesibilidad universal en todos los
           ámbitos.
         </p>
@@ -161,14 +161,14 @@ const areas = [
               data-aos-delay={index * 100}
             >
               <div
-                class={`w-16 h-16 bg-gradient-to-br ${servicio.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                class={`w-16 h-16 bg-linear-to-br ${servicio.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
               >
                 <servicio.icon className="w-8 h-8 text-white" />
               </div>
               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 {servicio.title}
               </h3>
-              <p class="text-gray-600 dark:text-gray-300">{servicio.description}</p>
+              <p class="text-gray-600 dark:text-gray-100">{servicio.description}</p>
             </div>
           ))
         }
@@ -178,7 +178,7 @@ const areas = [
 
   <!-- Áreas de Trabajo Section -->
   <section
-    class="py-32 bg-gradient-to-br from-gray-50 to-amber-50 dark:from-gray-800 dark:to-amber-900/10"
+    class="py-32 bg-linear-to-br from-gray-50 to-amber-50 dark:from-gray-800 dark:to-amber-900/10"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -186,7 +186,7 @@ const areas = [
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Áreas de trabajo
           </h2>
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p class="text-xl text-gray-600 dark:text-gray-100 mb-8">
             Abordamos la accesibilidad desde una perspectiva integral, trabajando en múltiples
             ámbitos.
           </p>
@@ -199,10 +199,10 @@ const areas = [
                   data-aos="fade-right"
                   data-aos-delay={index * 50}
                 >
-                  <div class="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-amber-600 to-orange-600 rounded-full flex items-center justify-center mt-1">
+                  <div class="shrink-0 w-6 h-6 bg-linear-to-br from-amber-600 to-orange-600 rounded-full flex items-center justify-center mt-1">
                     <CheckCircle className="w-4 h-4 text-white" />
                   </div>
-                  <p class="text-lg text-gray-700 dark:text-gray-300">{area}</p>
+                  <p class="text-lg text-gray-700 dark:text-gray-100">{area}</p>
                 </div>
               ))
             }
@@ -211,7 +211,7 @@ const areas = [
 
         <div class="relative">
           <div
-            class="aspect-square bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl shadow-2xl flex items-center justify-center"
+            class="aspect-square bg-linear-to-br from-amber-400 to-orange-500 rounded-3xl shadow-2xl flex items-center justify-center"
           >
             <Building className="w-32 h-32 text-white/80" />
           </div>
@@ -227,7 +227,7 @@ const areas = [
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Proyectos realizados
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Algunos de los proyectos de accesibilidad que hemos impulsado en Mataró.
         </p>
       </div>
@@ -261,15 +261,15 @@ const areas = [
             },
           ].map((proyecto, index) => (
             <div
-              class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-800 dark:to-amber-900/10 rounded-3xl p-8 shadow-lg"
+              class="bg-linear-to-br from-amber-50 to-orange-50 dark:from-gray-800 dark:to-amber-900/10 rounded-3xl p-8 shadow-lg"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div class="w-12 h-12 bg-gradient-to-br from-amber-600 to-orange-600 rounded-2xl flex items-center justify-center mb-4">
+              <div class="w-12 h-12 bg-linear-to-br from-amber-600 to-orange-600 rounded-2xl flex items-center justify-center mb-4">
                 <proyecto.icon className="w-6 h-6 text-white" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{proyecto.title}</h3>
-              <p class="text-gray-600 dark:text-gray-300">{proyecto.description}</p>
+              <p class="text-gray-600 dark:text-gray-100">{proyecto.description}</p>
             </div>
           ))
         }
@@ -278,7 +278,7 @@ const areas = [
   </section>
 
   <!-- CTA Section -->
-  <section class="py-32 bg-gradient-to-r from-amber-600 to-orange-600 relative overflow-hidden">
+  <section class="py-32 bg-linear-to-r from-amber-600 to-orange-600 relative overflow-hidden">
     <div class="absolute inset-0 opacity-10">
       <div
         class="absolute inset-0"

@@ -30,7 +30,7 @@ export default function ThemeToggle() {
 
   // Estilos consistentes para evitar saltos de tamaño
   const buttonStyles =
-    'w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-orange-100 to-amber-100 dark:from-gray-700 dark:to-gray-600 text-orange-600 dark:text-amber-400 hover:from-orange-200 hover:to-amber-200 dark:hover:from-gray-600 dark:hover:to-gray-500 transition-all duration-300 shadow-md hover:shadow-lg';
+    'w-10 h-10 flex items-center justify-center rounded-xl bg-linear-to-br from-orange-100 to-amber-100 dark:from-gray-700 dark:to-gray-600 text-orange-600 dark:text-amber-400 hover:from-orange-200 hover:to-amber-200 dark:hover:from-gray-600 dark:hover:to-gray-500 transition-all duration-300 shadow-md hover:shadow-lg';
 
   if (!mounted) {
     return (

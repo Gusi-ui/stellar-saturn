@@ -5,7 +5,6 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     // Verificar que Supabase esté configurado
     if (!supabase) {
-      console.error('Supabase client no está inicializado');
       return new Response(
         JSON.stringify({
           error: 'Error de configuración del servidor. Por favor, contacta al administrador.',
@@ -96,13 +95,6 @@ export const POST: APIRoute = async ({ request }) => {
       .single();
 
     if (dbError) {
-      console.error('Error al guardar en la base de datos:', {
-        message: dbError.message,
-        code: dbError.code,
-        details: dbError.details,
-        hint: dbError.hint,
-      });
-
       // Verificar si es un error de duplicado (email ya existe)
       if (dbError.code === '23505') {
         return new Response(
@@ -119,7 +111,6 @@ export const POST: APIRoute = async ({ request }) => {
 
       // Error de tabla no existe
       if (dbError.code === '42P01') {
-        console.error('La tabla registrations no existe en Supabase');
         return new Response(
           JSON.stringify({
             error:
@@ -143,13 +134,6 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Log exitoso (sin datos sensibles)
-    console.log('Registro guardado exitosamente:', {
-      id: insertedData.id,
-      email: insertedData.email,
-      timestamp: insertedData.created_at,
-    });
-
     // Aquí podrías agregar:
     // 1. Envío de email de confirmación (usando Resend, SendGrid, etc.)
     // 2. Notificación por WhatsApp
@@ -170,26 +154,18 @@ export const POST: APIRoute = async ({ request }) => {
       }
     );
   } catch (error) {
-    console.error('Error processing registration:', error);
-
-    // Log detallado del error para debugging
-    if (error instanceof Error) {
-      console.error('Error message:', error.message);
-      console.error('Error stack:', error.stack);
-
-      // Si es un error de variables de entorno, dar mensaje más específico
-      if (error.message.includes('variables de entorno')) {
-        return new Response(
-          JSON.stringify({
-            error:
-              'Error de configuración del servidor. Las variables de entorno no están configuradas correctamente.',
-          }),
-          {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' },
-          }
-        );
-      }
+    // Si es un error de variables de entorno, dar mensaje más específico
+    if (error instanceof Error && error.message.includes('variables de entorno')) {
+      return new Response(
+        JSON.stringify({
+          error:
+            'Error de configuración del servidor. Las variables de entorno no están configuradas correctamente.',
+        }),
+        {
+          status: 500,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
     }
 
     return new Response(

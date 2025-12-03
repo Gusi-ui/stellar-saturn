@@ -43,7 +43,7 @@ const logros = [
 >
   <!-- Hero Section -->
   <section
-    class="relative pt-32 pb-20 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-purple-900/20 overflow-hidden"
+    class="relative pt-32 pb-20 bg-linear-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-purple-900/20 overflow-hidden"
   >
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5">
@@ -56,11 +56,11 @@ const logros = [
 
     <!-- Decorative Elements -->
     <div
-      class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
+      class="absolute top-20 right-20 w-72 h-72 bg-linear-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
     >
     </div>
     <div
-      class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-fuchsia-400/20 to-purple-400/20 rounded-full blur-3xl"
+      class="absolute bottom-20 left-20 w-96 h-96 bg-linear-to-tr from-fuchsia-400/20 to-purple-400/20 rounded-full blur-3xl"
     >
     </div>
 
@@ -71,7 +71,7 @@ const logros = [
           <li>
             <a
               href="/"
-              class="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+              class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
               >Inicio</a
             >
           </li>
@@ -84,7 +84,7 @@ const logros = [
         <div>
           <!-- Icon Badge -->
           <div
-            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-full mb-6"
+            class="inline-flex items-center px-4 py-2 bg-linear-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-full mb-6"
           >
             <Megaphone className="w-5 h-5 text-purple-600 mr-2" />
             <span class="text-sm font-semibold text-purple-700 dark:text-purple-300"
@@ -96,7 +96,7 @@ const logros = [
             Luchamos por tus derechos
           </h1>
 
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p class="text-xl text-gray-600 dark:text-gray-100 mb-8">
             Desde DiverMataró organizamos y participamos activamente en actos reivindicativos para
             visibilizar la realidad de las personas con diversidad funcional y defender sus derechos
             fundamentales.
@@ -105,7 +105,7 @@ const logros = [
           <div class="flex flex-col sm:flex-row gap-4">
             <a
               href="/contacto/"
-              class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-2xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              class="inline-flex items-center justify-center px-8 py-4 bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-2xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               Únete a la lucha
               <Mail className="w-5 h-5 ml-2" />
@@ -122,7 +122,7 @@ const logros = [
         <!-- Image Placeholder -->
         <div class="relative">
           <div
-            class="aspect-square bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl shadow-2xl flex items-center justify-center"
+            class="aspect-square bg-linear-to-br from-purple-400 to-pink-500 rounded-3xl shadow-2xl flex items-center justify-center"
           >
             <Megaphone className="w-32 h-32 text-white/80" />
           </div>
@@ -138,7 +138,7 @@ const logros = [
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Nuestras Áreas de Acción
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Trabajamos en múltiples frentes para conseguir una sociedad más justa e inclusiva.
         </p>
       </div>
@@ -152,12 +152,12 @@ const logros = [
               data-aos-delay={index * 100}
             >
               <div
-                class={`w-16 h-16 bg-gradient-to-br ${area.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                class={`w-16 h-16 bg-linear-to-br ${area.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
               >
                 <area.icon className="w-8 h-8 text-white" />
               </div>
               <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{area.title}</h3>
-              <p class="text-gray-600 dark:text-gray-300">{area.description}</p>
+              <p class="text-gray-600 dark:text-gray-100">{area.description}</p>
             </div>
           ))
         }
@@ -167,7 +167,7 @@ const logros = [
 
   <!-- Logros Section -->
   <section
-    class="py-32 bg-gradient-to-br from-gray-50 to-purple-50 dark:from-gray-800 dark:to-purple-900/10"
+    class="py-32 bg-linear-to-br from-gray-50 to-purple-50 dark:from-gray-800 dark:to-purple-900/10"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -175,7 +175,7 @@ const logros = [
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Logros conseguidos
           </h2>
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p class="text-xl text-gray-600 dark:text-gray-100 mb-8">
             Gracias a nuestra acción reivindicativa y al trabajo conjunto con otras organizaciones,
             hemos conseguido importantes avances.
           </p>
@@ -188,10 +188,10 @@ const logros = [
                   data-aos="fade-right"
                   data-aos-delay={index * 50}
                 >
-                  <div class="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mt-1">
+                  <div class="shrink-0 w-6 h-6 bg-linear-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mt-1">
                     <Award className="w-4 h-4 text-white" />
                   </div>
-                  <p class="text-lg text-gray-700 dark:text-gray-300">{logro}</p>
+                  <p class="text-lg text-gray-700 dark:text-gray-100">{logro}</p>
                 </div>
               ))
             }
@@ -200,7 +200,7 @@ const logros = [
 
         <div class="relative">
           <div
-            class="aspect-square bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl shadow-2xl flex items-center justify-center"
+            class="aspect-square bg-linear-to-br from-purple-400 to-pink-500 rounded-3xl shadow-2xl flex items-center justify-center"
           >
             <Flag className="w-32 h-32 text-white/80" />
           </div>
@@ -216,7 +216,7 @@ const logros = [
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           ¿Cómo puedes participar?
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Hay muchas formas de sumarte a nuestra lucha por los derechos de las personas con
           diversidad funcional.
         </p>
@@ -247,11 +247,11 @@ const logros = [
             },
           ].map((forma, index) => (
             <div class="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
-              <div class="inline-flex w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl items-center justify-center mb-4">
+              <div class="inline-flex w-16 h-16 bg-linear-to-br from-purple-500 to-pink-500 rounded-2xl items-center justify-center mb-4">
                 <forma.icon className="w-8 h-8 text-white" />
               </div>
               <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{forma.title}</h3>
-              <p class="text-gray-600 dark:text-gray-300">{forma.description}</p>
+              <p class="text-gray-600 dark:text-gray-100">{forma.description}</p>
             </div>
           ))
         }
@@ -261,14 +261,14 @@ const logros = [
 
   <!-- Próximas Acciones Section -->
   <section
-    class="py-32 bg-gradient-to-br from-gray-50 to-pink-50 dark:from-gray-800 dark:to-pink-900/10"
+    class="py-32 bg-linear-to-br from-gray-50 to-pink-50 dark:from-gray-800 dark:to-pink-900/10"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Próximas acciones
         </h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
           Mantente informado/a sobre nuestras próximas actividades reivindicativas.
         </p>
       </div>
@@ -276,13 +276,13 @@ const logros = [
       <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl text-center">
         <Megaphone className="w-16 h-16 text-purple-600 mx-auto mb-6" />
         <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Mantente informado/a</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-6">
+        <p class="text-gray-600 dark:text-gray-100 mb-6">
           Síguenos en redes sociales o suscríbete a nuestro boletín para recibir información sobre
           próximas acciones reivindicativas.
         </p>
         <a
           href="/contacto/"
-          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-2xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          class="inline-flex items-center px-8 py-4 bg-linear-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-2xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
           Suscríbete
           <Mail className="w-5 h-5 ml-2" />
@@ -292,7 +292,7 @@ const logros = [
   </section>
 
   <!-- CTA Section -->
-  <section class="py-32 bg-gradient-to-r from-purple-600 to-pink-600 relative overflow-hidden">
+  <section class="py-32 bg-linear-to-r from-purple-600 to-pink-600 relative overflow-hidden">
     <div class="absolute inset-0 opacity-10">
       <div
         class="absolute inset-0"

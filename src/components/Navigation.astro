@@ -16,7 +16,7 @@ const contactLink = { name: 'Contacto', href: '/contacto/', phone: 'https://wa.m
 >
   <!-- Gradiente decorativo en la parte superior -->
   <div
-    class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 opacity-60"
+    class="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-orange-500 via-amber-500 to-orange-500 opacity-60"
   >
   </div>
 
@@ -27,11 +27,11 @@ const contactLink = { name: 'Contacto', href: '/contacto/', phone: 'https://wa.m
         <a href="/" class="group relative">
           <div class="relative">
             <div
-              class="absolute -inset-2 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-500"
+              class="absolute -inset-2 bg-linear-to-r from-orange-400 to-amber-400 rounded-full blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-500"
             >
             </div>
             <div
-              class="relative bg-gradient-to-br from-white to-orange-50 dark:from-gray-800 dark:to-gray-700 p-2 rounded-xl shadow-lg border border-white/70 dark:border-gray-500"
+              class="relative bg-linear-to-br from-white to-orange-50 dark:from-gray-800 dark:to-gray-700 p-2 rounded-xl shadow-lg border border-white/70 dark:border-gray-500"
             >
               <img
                 src="/logoDiverMataro.png"
@@ -57,19 +57,19 @@ const contactLink = { name: 'Contacto', href: '/contacto/', phone: 'https://wa.m
                 <div class="relative">
                   {/* Glow effect - siempre visible si está activo */}
                   <div
-                    class={`absolute -inset-2 bg-gradient-to-r from-orange-400 to-amber-400 rounded-xl blur-lg transition-opacity duration-500 ${isActive ? 'opacity-40' : 'opacity-0 group-hover:opacity-40'}`}
+                    class={`absolute -inset-2 bg-linear-to-r from-orange-400 to-amber-400 rounded-xl blur-lg transition-opacity duration-500 ${isActive ? 'opacity-40' : 'opacity-0 group-hover:opacity-40'}`}
                   />
 
                   {/* Contenedor con gradiente y borde - destacado si está activo */}
                   <div
-                    class={`relative px-3 py-2 rounded-xl shadow-md group-hover:shadow-xl border transition-all duration-500 group-hover:scale-105 ${
+                    class={`relative px-4 py-2.5 rounded-xl shadow-md group-hover:shadow-xl border transition-all duration-500 ${
                       isActive
-                        ? 'bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 border-orange-400/70 dark:border-orange-600/70 shadow-lg scale-105'
-                        : 'bg-gradient-to-br from-white to-orange-50/30 dark:from-gray-800 dark:to-gray-700/50 border-white/70 dark:border-gray-600/50'
+                        ? 'bg-linear-to-br from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 border-orange-400/70 dark:border-orange-600/70 shadow-lg'
+                        : 'bg-linear-to-br from-white to-orange-50/30 dark:from-gray-800 dark:to-gray-700/50 border-white/70 dark:border-gray-600/50'
                     }`}
                   >
                     <span
-                      class={`text-sm font-semibold transition-colors duration-300 whitespace-nowrap ${
+                      class={`text-base font-semibold transition-colors duration-300 whitespace-nowrap ${
                         isActive
                           ? 'text-orange-600 dark:text-orange-400'
                           : 'text-gray-800 dark:text-gray-200 group-hover:text-orange-600 dark:group-hover:text-orange-400'
@@ -93,7 +93,7 @@ const contactLink = { name: 'Contacto', href: '/contacto/', phone: 'https://wa.m
           class="group relative flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-all duration-300"
         >
           <span
-            class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors whitespace-nowrap"
+            class="text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors whitespace-nowrap"
           >
             {contactLink.name}
           </span>
@@ -101,7 +101,7 @@ const contactLink = { name: 'Contacto', href: '/contacto/', phone: 'https://wa.m
             href={contactLink.phone}
             target="_blank"
             rel="noopener noreferrer"
-            class="p-2.5 bg-gradient-to-br from-orange-500 to-amber-500 text-white rounded-xl hover:from-orange-600 hover:to-amber-600 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
+            class="w-10 h-10 flex items-center justify-center bg-linear-to-br from-orange-500 to-amber-500 text-white rounded-xl hover:from-orange-600 hover:to-amber-600 transition-all duration-300 hover:scale-110 shadow-lg hover:shadow-xl"
             aria-label="Llamar por WhatsApp"
           >
             <svg
@@ -123,25 +123,18 @@ const contactLink = { name: 'Contacto', href: '/contacto/', phone: 'https://wa.m
         <!-- Botón Asociarse -->
         <a
           href="/inscripcion/"
-          class="group relative px-4 py-2 bg-gradient-to-r from-orange-600 to-amber-600 text-white text-sm font-bold rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
+          class="group relative px-5 py-2.5 bg-linear-to-r from-orange-600 to-amber-600 text-white text-base font-bold rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-orange-500/40 transition-shadow duration-300 whitespace-nowrap"
         >
           <span
-            class="absolute inset-0 bg-gradient-to-r from-orange-700 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 bg-linear-to-r from-orange-700 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           ></span>
-          <span
-            class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-          ></span>
-          <span class="relative z-10 flex items-center gap-1.5">
-            <svg
-              class="w-4 h-4 group-hover:scale-110 transition-transform duration-300"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+          <span class="relative z-10 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
               ></path>
             </svg>
-            <span class="group-hover:tracking-wider transition-all duration-300">Asociarse</span>
+            <span>Asociarse</span>
           </span>
         </a>
 
@@ -192,15 +185,15 @@ const contactLink = { name: 'Contacto', href: '/contacto/', phone: 'https://wa.m
                   <div class="relative">
                     {/* Glow effect - visible si está activo */}
                     <div
-                      class={`absolute -inset-1 bg-gradient-to-r from-orange-400 to-amber-400 rounded-xl blur transition-opacity duration-500 ${isActive ? 'opacity-30' : 'opacity-0 group-hover:opacity-30'}`}
+                      class={`absolute -inset-1 bg-linear-to-r from-orange-400 to-amber-400 rounded-xl blur transition-opacity duration-500 ${isActive ? 'opacity-30' : 'opacity-0 group-hover:opacity-30'}`}
                     />
 
                     {/* Contenedor - destacado si está activo */}
                     <div
                       class={`relative px-5 py-3 rounded-xl shadow group-hover:shadow-lg border transition-all duration-500 group-hover:scale-105 ${
                         isActive
-                          ? 'bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 border-orange-400/70 dark:border-orange-600/70 shadow-lg scale-105'
-                          : 'bg-gradient-to-br from-white to-orange-50/30 dark:from-gray-800 dark:to-gray-700/50 border-white/70 dark:border-gray-600/50'
+                          ? 'bg-linear-to-br from-orange-50 to-amber-50 dark:from-orange-900/30 dark:to-amber-900/30 border-orange-400/70 dark:border-orange-600/70 shadow-lg scale-105'
+                          : 'bg-linear-to-br from-white to-orange-50/30 dark:from-gray-800 dark:to-gray-700/50 border-white/70 dark:border-gray-600/50'
                       }`}
                     >
                       <span
@@ -227,7 +220,7 @@ const contactLink = { name: 'Contacto', href: '/contacto/', phone: 'https://wa.m
               href={contactLink.phone}
               target="_blank"
               rel="noopener noreferrer"
-              class="flex-1 flex items-center justify-center gap-2 p-3 bg-gradient-to-br from-orange-500 to-amber-500 text-white rounded-xl hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-lg mr-3"
+              class="flex-1 flex items-center justify-center gap-2 p-3 bg-linear-to-br from-orange-500 to-amber-500 text-white rounded-xl hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-lg mr-3"
               aria-label="Llamar por WhatsApp"
             >
               <svg
@@ -251,10 +244,10 @@ const contactLink = { name: 'Contacto', href: '/contacto/', phone: 'https://wa.m
 
           <a
             href="/inscripcion/"
-            class="group relative w-full inline-flex items-center justify-center px-5 py-3.5 bg-gradient-to-r from-orange-600 to-amber-600 text-white text-base font-bold rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105"
+            class="group relative w-full inline-flex items-center justify-center px-5 py-3.5 bg-linear-to-r from-orange-600 to-amber-600 text-white text-base font-bold rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105"
           >
             <span
-              class="absolute inset-0 bg-gradient-to-r from-orange-700 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              class="absolute inset-0 bg-linear-to-r from-orange-700 to-amber-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             ></span>
             <span
               class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"

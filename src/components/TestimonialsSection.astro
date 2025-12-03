@@ -30,15 +30,15 @@ const testimonials = [
 ---
 
 <section
-  class="py-32 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900 relative overflow-hidden"
+  class="py-32 bg-linear-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900 relative overflow-hidden"
 >
   <!-- Background Elements -->
   <div
-    class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
+    class="absolute top-20 right-20 w-72 h-72 bg-linear-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
   >
   </div>
   <div
-    class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"
+    class="absolute bottom-20 left-20 w-96 h-96 bg-linear-to-tr from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"
   >
   </div>
 
@@ -56,7 +56,7 @@ const testimonials = [
         Lo que dicen de nosotros
       </h2>
 
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+      <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
         Las experiencias de las personas que forman parte de nuestra comunidad hablan por sí solas.
       </p>
     </div>
@@ -71,7 +71,7 @@ const testimonials = [
             data-aos-delay={index * 100}
           >
             {/* Quote Icon */}
-            <div class="absolute top-6 right-6 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+            <div class="absolute top-6 right-6 w-12 h-12 bg-linear-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
               <Quote className="w-6 h-6 text-white" />
             </div>
 
@@ -84,7 +84,7 @@ const testimonials = [
 
             {/* Content */}
             <div class="mb-6">
-              <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed italic">
+              <p class="text-gray-700 dark:text-gray-100 text-lg leading-relaxed italic">
                 "{testimonial.content}"
               </p>
             </div>
@@ -98,7 +98,7 @@ const testimonials = [
                   class="w-12 h-12 rounded-full object-cover mr-4 border-2 border-white dark:border-gray-700 shadow-lg"
                 />
               ) : (
-                <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                <div class="w-12 h-12 bg-linear-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
                   {testimonial.name
                     .split(' ')
                     .map((n) => n[0])
@@ -107,11 +107,11 @@ const testimonials = [
               )}
               <div>
                 <div class="font-semibold text-gray-900 dark:text-white">{testimonial.name}</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</div>
+                <div class="text-sm text-gray-600 dark:text-gray-300">{testimonial.role}</div>
               </div>
             </div>
 
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div class="absolute inset-0 bg-linear-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
         ))
       }
@@ -123,12 +123,12 @@ const testimonials = [
         <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           ¿Quieres compartir tu experiencia?
         </h3>
-        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+        <p class="text-xl text-gray-600 dark:text-gray-100 mb-8">
           Tu historia puede inspirar a otras personas a unirse a nuestra comunidad.
         </p>
         <a
           href="/contacto/"
-          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          class="inline-flex items-center px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
         >
           Compartir mi testimonio
           <Quote className="w-5 h-5 ml-2" />
