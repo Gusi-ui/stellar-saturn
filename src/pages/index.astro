@@ -7,7 +7,7 @@ import CTASection from '../components/CTASection.astro';
 
 // Blog posts data
 const allPosts = Object.values(
-  await import.meta.glob<{
+  import.meta.glob<{
     frontmatter: {
       date: string;
       title: string;
