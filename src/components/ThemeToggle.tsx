@@ -11,15 +11,11 @@ export default function ThemeToggle() {
     const currentTheme = htmlElement.classList.contains('dark');
     setIsDark(currentTheme);
     setMounted(true);
-
-    console.log('ThemeToggle mounted. Current theme:', currentTheme ? 'dark' : 'light');
   }, []);
 
   const toggleTheme = () => {
     const htmlElement = document.documentElement;
     const newIsDark = !isDark;
-
-    console.log('Toggling theme to:', newIsDark ? 'dark' : 'light');
 
     if (newIsDark) {
       htmlElement.classList.add('dark');
@@ -32,13 +28,13 @@ export default function ThemeToggle() {
     setIsDark(newIsDark);
   };
 
+  // Estilos consistentes para evitar saltos de tamaño
+  const buttonStyles =
+    'w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-orange-100 to-amber-100 dark:from-gray-700 dark:to-gray-600 text-orange-600 dark:text-amber-400 hover:from-orange-200 hover:to-amber-200 dark:hover:from-gray-600 dark:hover:to-gray-500 transition-all duration-300 shadow-md hover:shadow-lg';
+
   if (!mounted) {
     return (
-      <button
-        className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors"
-        aria-label="Cambiar tema"
-        disabled
-      >
+      <button className={buttonStyles} aria-label="Cambiar tema" disabled>
         <Sun className="w-5 h-5" />
       </button>
     );
@@ -47,7 +43,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
+      className={buttonStyles}
       aria-label={`Cambiar a modo ${isDark ? 'claro' : 'oscuro'}`}
       type="button"
     >

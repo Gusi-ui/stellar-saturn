@@ -145,12 +145,8 @@ const contactLink = { name: 'Contacto', href: '/contacto/', phone: 'https://wa.m
           </span>
         </a>
 
-        <!-- Dark Mode Toggle más prominente -->
-        <div
-          class="bg-gradient-to-br from-white to-orange-50/50 dark:from-gray-800 dark:to-gray-700 backdrop-blur-lg rounded-xl p-2 border-2 border-orange-200/50 dark:border-orange-800/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-        >
-          <ThemeToggle client:load />
-        </div>
+        <!-- Dark Mode Toggle -->
+        <ThemeToggle client:load />
       </div>
 
       <div class="lg:hidden">
@@ -249,12 +245,8 @@ const contactLink = { name: 'Contacto', href: '/contacto/', phone: 'https://wa.m
               </svg>
               <span class="font-semibold">Llamar</span>
             </a>
-            {/* Dark Mode más visible */}
-            <div
-              class="bg-gradient-to-br from-white to-orange-50/50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-1 border-2 border-orange-200/50 dark:border-orange-800/50 shadow-lg"
-            >
-              <ThemeToggle client:load />
-            </div>
+            {/* Dark Mode */}
+            <ThemeToggle client:load />
           </div>
 
           <a
