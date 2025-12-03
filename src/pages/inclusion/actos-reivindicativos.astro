@@ -1,0 +1,327 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Megaphone, Flag, Users, Award, Target, Heart, Phone, Mail } from 'lucide-react';
+
+const areas = [
+  {
+    icon: Flag,
+    title: 'Campañas de Sensibilización',
+    description:
+      'Acciones para visibilizar la realidad de las personas con diversidad funcional y promover el cambio social.',
+    color: 'from-purple-500 to-pink-500',
+  },
+  {
+    icon: Users,
+    title: 'Manifestaciones y Actos',
+    description:
+      'Participación activa en manifestaciones y eventos reivindicativos por los derechos de las personas.',
+    color: 'from-pink-500 to-rose-500',
+  },
+  {
+    icon: Target,
+    title: 'Incidencia Política',
+    description:
+      'Trabajo de lobby y presión para influir en políticas públicas que afectan a la diversidad funcional.',
+    color: 'from-fuchsia-500 to-purple-500',
+  },
+];
+
+const logros = [
+  'Mejora de la accesibilidad en espacios públicos de Mataró',
+  'Inclusión de cláusulas sociales en contratos municipales',
+  'Aumento de recursos para la atención temprana',
+  'Reconocimiento de derechos laborales específicos',
+  'Campañas exitosas contra el estigma y la discriminación',
+  'Colaboración con instituciones para políticas inclusivas',
+];
+---
+
+<BaseLayout
+  title="Actos Reivindicativos | DiverMataró"
+  description="Organizamos y participamos en actos para visibilizar y defender los derechos de las personas con diversidad funcional."
+  image="/logoDiverMataro.png"
+>
+  <!-- Hero Section -->
+  <section
+    class="relative pt-32 pb-20 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-purple-900/20 overflow-hidden"
+  >
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div
+        class="absolute inset-0"
+        style="background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0); background-size: 20px 20px;"
+      >
+      </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div
+      class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-fuchsia-400/20 to-purple-400/20 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li>
+            <a
+              href="/"
+              class="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+              >Inicio</a
+            >
+          </li>
+          <li class="text-gray-400">/</li>
+          <li class="text-purple-600 dark:text-purple-400 font-semibold">Actos Reivindicativos</li>
+        </ol>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <!-- Icon Badge -->
+          <div
+            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 rounded-full mb-6"
+          >
+            <Megaphone className="w-5 h-5 text-purple-600 mr-2" />
+            <span class="text-sm font-semibold text-purple-700 dark:text-purple-300"
+              >Actos Reivindicativos</span
+            >
+          </div>
+
+          <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            Luchamos por tus derechos
+          </h1>
+
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Desde DiverMataró organizamos y participamos activamente en actos reivindicativos para
+            visibilizar la realidad de las personas con diversidad funcional y defender sus derechos
+            fundamentales.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/contacto/"
+              class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-2xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Únete a la lucha
+              <Mail className="w-5 h-5 ml-2" />
+            </a>
+            <a
+              href="#areas"
+              class="inline-flex items-center justify-center px-8 py-4 bg-white dark:bg-gray-800 text-purple-600 dark:text-purple-400 font-semibold rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 border-2 border-purple-200 dark:border-purple-800"
+            >
+              Ver áreas de acción
+            </a>
+          </div>
+        </div>
+
+        <!-- Image Placeholder -->
+        <div class="relative">
+          <div
+            class="aspect-square bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl shadow-2xl flex items-center justify-center"
+          >
+            <Megaphone className="w-32 h-32 text-white/80" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Áreas de Acción Section -->
+  <section id="areas" class="py-32 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Nuestras Áreas de Acción
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Trabajamos en múltiples frentes para conseguir una sociedad más justa e inclusiva.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          areas.map((area, index) => (
+            <div
+              class="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div
+                class={`w-16 h-16 bg-gradient-to-br ${area.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <area.icon className="w-8 h-8 text-white" />
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{area.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300">{area.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Logros Section -->
+  <section
+    class="py-32 bg-gradient-to-br from-gray-50 to-purple-50 dark:from-gray-800 dark:to-purple-900/10"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            Logros conseguidos
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Gracias a nuestra acción reivindicativa y al trabajo conjunto con otras organizaciones,
+            hemos conseguido importantes avances.
+          </p>
+
+          <div class="space-y-4">
+            {
+              logros.map((logro, index) => (
+                <div
+                  class="flex items-start gap-4"
+                  data-aos="fade-right"
+                  data-aos-delay={index * 50}
+                >
+                  <div class="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mt-1">
+                    <Award className="w-4 h-4 text-white" />
+                  </div>
+                  <p class="text-lg text-gray-700 dark:text-gray-300">{logro}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="relative">
+          <div
+            class="aspect-square bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl shadow-2xl flex items-center justify-center"
+          >
+            <Flag className="w-32 h-32 text-white/80" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo Participar Section -->
+  <section class="py-32 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          ¿Cómo puedes participar?
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Hay muchas formas de sumarte a nuestra lucha por los derechos de las personas con
+          diversidad funcional.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {
+          [
+            {
+              icon: Users,
+              title: 'Asiste a actos',
+              description: 'Participa en manifestaciones y eventos reivindicativos.',
+            },
+            {
+              icon: Megaphone,
+              title: 'Difunde el mensaje',
+              description: 'Comparte nuestras campañas en redes sociales.',
+            },
+            {
+              icon: Heart,
+              title: 'Hazte socio/a',
+              description: 'Apoya nuestra labor con tu cuota de socio/a.',
+            },
+            {
+              icon: Flag,
+              title: 'Propón acciones',
+              description: 'Sugiere nuevas iniciativas y campañas.',
+            },
+          ].map((forma, index) => (
+            <div class="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div class="inline-flex w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl items-center justify-center mb-4">
+                <forma.icon className="w-8 h-8 text-white" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{forma.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300">{forma.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Próximas Acciones Section -->
+  <section
+    class="py-32 bg-gradient-to-br from-gray-50 to-pink-50 dark:from-gray-800 dark:to-pink-900/10"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Próximas acciones
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Mantente informado/a sobre nuestras próximas actividades reivindicativas.
+        </p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl text-center">
+        <Megaphone className="w-16 h-16 text-purple-600 mx-auto mb-6" />
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Mantente informado/a</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          Síguenos en redes sociales o suscríbete a nuestro boletín para recibir información sobre
+          próximas acciones reivindicativas.
+        </p>
+        <a
+          href="/contacto/"
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-2xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+        >
+          Suscríbete
+          <Mail className="w-5 h-5 ml-2" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-32 bg-gradient-to-r from-purple-600 to-pink-600 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute inset-0"
+        style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0); background-size: 40px 40px;"
+      >
+      </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">¿Quieres sumarte a la lucha?</h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Juntos podemos conseguir una sociedad más justa e inclusiva. Únete a nosotros.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contacto/"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+        >
+          Contactar ahora
+          <Phone className="w-5 h-5 ml-2" />
+        </a>
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-2xl hover:bg-white hover:text-purple-600 transition-all duration-300"
+        >
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

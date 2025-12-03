@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  Accessibility,
+  Building,
+  MapPin,
+  Smartphone,
+  CheckCircle,
+  Users,
+  Phone,
+  Mail,
+} from 'lucide-react';
+
+const servicios = [
+  {
+    icon: Building,
+    title: 'Auditorías de Accesibilidad',
+    description:
+      'Evaluamos espacios públicos y privados para identificar barreras y proponer mejoras de accesibilidad.',
+    color: 'from-amber-600 to-orange-600',
+  },
+  {
+    icon: Users,
+    title: 'Asesoramiento a Entidades',
+    description:
+      'Ayudamos a empresas e instituciones a implementar medidas de accesibilidad universal.',
+    color: 'from-orange-600 to-amber-600',
+  },
+  {
+    icon: MapPin,
+    title: 'Proyectos de Mejora',
+    description:
+      'Impulsamos proyectos concretos para mejorar la accesibilidad en Mataró y su entorno.',
+    color: 'from-yellow-600 to-orange-600',
+  },
+];
+
+const areas = [
+  'Accesibilidad física en edificios y espacios públicos',
+  'Accesibilidad en el transporte público',
+  'Accesibilidad digital y tecnológica',
+  'Accesibilidad en la comunicación',
+  'Señalización y orientación accesible',
+  'Eliminación de barreras arquitectónicas',
+];
+---
+
+<BaseLayout
+  title="Accesibilidad Universal | DiverMataró"
+  description="Trabajamos por un entorno accesible para todas las personas, sin exclusiones, promoviendo la accesibilidad universal en todos los ámbitos."
+  image="/logoDiverMataro.png"
+>
+  <!-- Hero Section -->
+  <section
+    class="relative pt-32 pb-20 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-900 dark:to-amber-900/20 overflow-hidden"
+  >
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div
+        class="absolute inset-0"
+        style="background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0); background-size: 20px 20px;"
+      >
+      </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div
+      class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-amber-400/20 to-orange-400/20 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-orange-400/20 to-amber-400/20 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li>
+            <a
+              href="/"
+              class="text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+              >Inicio</a
+            >
+          </li>
+          <li class="text-gray-400">/</li>
+          <li class="text-amber-600 dark:text-amber-400 font-semibold">Accesibilidad Universal</li>
+        </ol>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <!-- Icon Badge -->
+          <div
+            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-full mb-6"
+          >
+            <Accessibility className="w-5 h-5 text-amber-600 mr-2" />
+            <span class="text-sm font-semibold text-amber-700 dark:text-amber-300"
+              >Accesibilidad Universal</span
+            >
+          </div>
+
+          <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            Un mundo accesible para todos
+          </h1>
+
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Trabajamos para eliminar barreras y crear entornos accesibles que permitan la
+            participación plena de todas las personas, independientemente de sus capacidades.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/contacto/"
+              class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold rounded-2xl hover:from-amber-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Solicita una auditoría
+              <Mail className="w-5 h-5 ml-2" />
+            </a>
+            <a
+              href="#servicios"
+              class="inline-flex items-center justify-center px-8 py-4 bg-white dark:bg-gray-800 text-amber-600 dark:text-amber-400 font-semibold rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 border-2 border-amber-200 dark:border-amber-800"
+            >
+              Ver servicios
+            </a>
+          </div>
+        </div>
+
+        <!-- Image Placeholder -->
+        <div class="relative">
+          <div
+            class="aspect-square bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl shadow-2xl flex items-center justify-center"
+          >
+            <Accessibility className="w-32 h-32 text-white/80" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Section -->
+  <section id="servicios" class="py-32 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Nuestros Servicios
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Ofrecemos servicios especializados para promover la accesibilidad universal en todos los
+          ámbitos.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          servicios.map((servicio, index) => (
+            <div
+              class="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div
+                class={`w-16 h-16 bg-gradient-to-br ${servicio.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <servicio.icon className="w-8 h-8 text-white" />
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                {servicio.title}
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300">{servicio.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Áreas de Trabajo Section -->
+  <section
+    class="py-32 bg-gradient-to-br from-gray-50 to-amber-50 dark:from-gray-800 dark:to-amber-900/10"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            Áreas de trabajo
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Abordamos la accesibilidad desde una perspectiva integral, trabajando en múltiples
+            ámbitos.
+          </p>
+
+          <div class="space-y-4">
+            {
+              areas.map((area, index) => (
+                <div
+                  class="flex items-start gap-4"
+                  data-aos="fade-right"
+                  data-aos-delay={index * 50}
+                >
+                  <div class="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-amber-600 to-orange-600 rounded-full flex items-center justify-center mt-1">
+                    <CheckCircle className="w-4 h-4 text-white" />
+                  </div>
+                  <p class="text-lg text-gray-700 dark:text-gray-300">{area}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="relative">
+          <div
+            class="aspect-square bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl shadow-2xl flex items-center justify-center"
+          >
+            <Building className="w-32 h-32 text-white/80" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos Section -->
+  <section class="py-32 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Proyectos realizados
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Algunos de los proyectos de accesibilidad que hemos impulsado en Mataró.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {
+          [
+            {
+              title: 'Mejora de accesibilidad en playas',
+              description:
+                'Instalación de pasarelas y sillas anfibias para garantizar el acceso universal a las playas de Mataró.',
+              icon: MapPin,
+            },
+            {
+              title: 'Auditoría de edificios municipales',
+              description:
+                'Evaluación completa de la accesibilidad en todos los edificios públicos del municipio.',
+              icon: Building,
+            },
+            {
+              title: 'App de rutas accesibles',
+              description:
+                'Desarrollo de una aplicación móvil con información sobre rutas y espacios accesibles en la ciudad.',
+              icon: Smartphone,
+            },
+            {
+              title: 'Formación en accesibilidad',
+              description:
+                'Programas de formación para técnicos municipales y profesionales sobre diseño universal.',
+              icon: Users,
+            },
+          ].map((proyecto, index) => (
+            <div
+              class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-800 dark:to-amber-900/10 rounded-3xl p-8 shadow-lg"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div class="w-12 h-12 bg-gradient-to-br from-amber-600 to-orange-600 rounded-2xl flex items-center justify-center mb-4">
+                <proyecto.icon className="w-6 h-6 text-white" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{proyecto.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300">{proyecto.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-32 bg-gradient-to-r from-amber-600 to-orange-600 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute inset-0"
+        style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0); background-size: 40px 40px;"
+      >
+      </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        ¿Necesitas mejorar la accesibilidad?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Podemos ayudarte a crear espacios más accesibles e inclusivos. Solicita una auditoría o
+        asesoramiento.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contacto/"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-amber-600 font-semibold rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+        >
+          Contactar ahora
+          <Phone className="w-5 h-5 ml-2" />
+        </a>
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-2xl hover:bg-white hover:text-amber-600 transition-all duration-300"
+        >
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

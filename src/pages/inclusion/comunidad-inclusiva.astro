@@ -1,0 +1,312 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Users, Heart, Calendar, MessageCircle, Coffee, Smile, Phone, Mail } from 'lucide-react';
+
+const espacios = [
+  {
+    icon: Coffee,
+    title: 'Grupos de Encuentro',
+    description:
+      'Reuniones periódicas para compartir experiencias, crear vínculos y disfrutar de actividades en común.',
+    color: 'from-amber-500 to-yellow-500',
+  },
+  {
+    icon: MessageCircle,
+    title: 'Grupos de Apoyo Mutuo',
+    description:
+      'Espacios seguros donde familias y personas con diversidad funcional se apoyan mutuamente.',
+    color: 'from-yellow-500 to-orange-500',
+  },
+  {
+    icon: Smile,
+    title: 'Actividades Sociales',
+    description:
+      'Eventos, excursiones y actividades de ocio diseñadas para fomentar la inclusión y la diversión.',
+    color: 'from-orange-500 to-amber-500',
+  },
+];
+
+const beneficios = [
+  'Reducción del aislamiento social',
+  'Creación de redes de apoyo sólidas',
+  'Intercambio de experiencias y conocimientos',
+  'Fortalecimiento de la autoestima',
+  'Desarrollo de habilidades sociales',
+  'Sentimiento de pertenencia a una comunidad',
+];
+---
+
+<BaseLayout
+  title="Comunidad Inclusiva | DiverMataró"
+  description="Espacios de encuentro donde construir relaciones significativas y compartir experiencias en un entorno inclusivo y acogedor."
+  image="/logoDiverMataro.png"
+>
+  <!-- Hero Section -->
+  <section
+    class="relative pt-32 pb-20 bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-gray-900 dark:to-amber-900/20 overflow-hidden"
+  >
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div
+        class="absolute inset-0"
+        style="background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0); background-size: 20px 20px;"
+      >
+      </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div
+      class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-amber-400/20 to-yellow-400/20 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-orange-400/20 to-amber-400/20 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li>
+            <a
+              href="/"
+              class="text-gray-600 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+              >Inicio</a
+            >
+          </li>
+          <li class="text-gray-400">/</li>
+          <li class="text-amber-600 dark:text-amber-400 font-semibold">Comunidad Inclusiva</li>
+        </ol>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <!-- Icon Badge -->
+          <div
+            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-100 to-yellow-100 dark:from-amber-900/30 dark:to-yellow-900/30 rounded-full mb-6"
+          >
+            <Users className="w-5 h-5 text-amber-600 mr-2" />
+            <span class="text-sm font-semibold text-amber-700 dark:text-amber-300"
+              >Comunidad Inclusiva</span
+            >
+          </div>
+
+          <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            Juntos somos más fuertes
+          </h1>
+
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Creamos espacios de encuentro donde las personas con diversidad funcional y sus familias
+            pueden conectar, compartir experiencias y construir relaciones significativas en un
+            entorno acogedor e inclusivo.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/contacto/"
+              class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-semibold rounded-2xl hover:from-amber-700 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Únete a la comunidad
+              <Mail className="w-5 h-5 ml-2" />
+            </a>
+            <a
+              href="#espacios"
+              class="inline-flex items-center justify-center px-8 py-4 bg-white dark:bg-gray-800 text-amber-600 dark:text-amber-400 font-semibold rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 border-2 border-amber-200 dark:border-amber-800"
+            >
+              Ver espacios
+            </a>
+          </div>
+        </div>
+
+        <!-- Image Placeholder -->
+        <div class="relative">
+          <div
+            class="aspect-square bg-gradient-to-br from-amber-400 to-yellow-500 rounded-3xl shadow-2xl flex items-center justify-center"
+          >
+            <Users className="w-32 h-32 text-white/80" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Espacios Section -->
+  <section id="espacios" class="py-32 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Nuestros Espacios de Encuentro
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Ofrecemos diferentes espacios diseñados para fomentar la conexión, el apoyo mutuo y la
+          inclusión social.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          espacios.map((espacio, index) => (
+            <div
+              class="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div
+                class={`w-16 h-16 bg-gradient-to-br ${espacio.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <espacio.icon className="w-8 h-8 text-white" />
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">{espacio.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300">{espacio.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios Section -->
+  <section
+    class="py-32 bg-gradient-to-br from-gray-50 to-amber-50 dark:from-gray-800 dark:to-amber-900/10"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="relative">
+          <div
+            class="aspect-square bg-gradient-to-br from-amber-400 to-yellow-500 rounded-3xl shadow-2xl flex items-center justify-center"
+          >
+            <Heart className="w-32 h-32 text-white/80" />
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            Beneficios de formar parte
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Ser parte de nuestra comunidad inclusiva aporta múltiples beneficios tanto a nivel
+            personal como familiar.
+          </p>
+
+          <div class="space-y-4">
+            {
+              beneficios.map((beneficio, index) => (
+                <div
+                  class="flex items-start gap-4"
+                  data-aos="fade-left"
+                  data-aos-delay={index * 50}
+                >
+                  <div class="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-full flex items-center justify-center mt-1">
+                    <svg
+                      class="w-4 h-4 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <p class="text-lg text-gray-700 dark:text-gray-300">{beneficio}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Actividades Section -->
+  <section class="py-32 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Actividades Comunitarias
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Organizamos regularmente actividades para fortalecer los lazos comunitarios y promover la
+          inclusión.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {
+          [
+            {
+              icon: Calendar,
+              title: 'Reuniones mensuales',
+              description: 'Encuentros regulares para compartir y conectar.',
+            },
+            {
+              icon: Coffee,
+              title: 'Cafés tertulia',
+              description: 'Conversaciones informales en un ambiente relajado.',
+            },
+            {
+              icon: Users,
+              title: 'Excursiones grupales',
+              description: 'Salidas y actividades al aire libre en grupo.',
+            },
+            {
+              icon: Smile,
+              title: 'Eventos especiales',
+              description: 'Celebraciones y eventos festivos durante el año.',
+            },
+          ].map((actividad, index) => (
+            <div class="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div class="inline-flex w-16 h-16 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-2xl items-center justify-center mb-4">
+                <actividad.icon className="w-8 h-8 text-white" />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                {actividad.title}
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300">{actividad.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-32 bg-gradient-to-r from-amber-600 to-yellow-600 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute inset-0"
+        style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0); background-size: 40px 40px;"
+      >
+      </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        ¿Quieres formar parte de nuestra comunidad?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Únete a nosotros y descubre el poder de una comunidad inclusiva y solidaria.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contacto/"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-amber-600 font-semibold rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+        >
+          Contactar ahora
+          <Phone className="w-5 h-5 ml-2" />
+        </a>
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-2xl hover:bg-white hover:text-amber-600 transition-all duration-300"
+        >
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

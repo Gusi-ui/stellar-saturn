@@ -1,0 +1,297 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Heart, Users, Phone, Mail, Calendar, CheckCircle } from 'lucide-react';
+
+const servicios = [
+  {
+    icon: Heart,
+    title: 'Atención Psicosocial',
+    description: 'Apoyo emocional y psicológico adaptado a cada situación personal y familiar.',
+    color: 'from-rose-500 to-pink-500',
+  },
+  {
+    icon: Users,
+    title: 'Orientación Familiar',
+    description: 'Asesoramiento y acompañamiento a familias en todas las etapas del proceso.',
+    color: 'from-orange-500 to-amber-500',
+  },
+  {
+    icon: Calendar,
+    title: 'Planes Individualizados',
+    description: 'Diseño de itinerarios personalizados según necesidades y objetivos específicos.',
+    color: 'from-amber-500 to-yellow-500',
+  },
+];
+
+const beneficios = [
+  'Atención individualizada y personalizada',
+  'Profesionales especializados en diversidad funcional',
+  'Seguimiento continuo y evaluación de progresos',
+  'Coordinación con otros servicios y recursos',
+  'Flexibilidad horaria y adaptación a necesidades',
+  'Enfoque centrado en la persona y su familia',
+];
+---
+
+<BaseLayout
+  title="Apoyo Personalizado | DiverMataró"
+  description="Ofrecemos atención individualizada adaptada a las necesidades específicas de cada persona con diversidad funcional y su familia."
+  image="/logoDiverMataro.png"
+>
+  <!-- Hero Section -->
+  <section
+    class="relative pt-32 pb-20 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-gray-900 dark:to-orange-900/20 overflow-hidden"
+  >
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div
+        class="absolute inset-0"
+        style="background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0); background-size: 20px 20px;"
+      >
+      </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div
+      class="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-orange-400/20 to-amber-400/20 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-rose-400/20 to-pink-400/20 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li>
+            <a
+              href="/"
+              class="text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+              >Inicio</a
+            >
+          </li>
+          <li class="text-gray-400">/</li>
+          <li class="text-orange-600 dark:text-orange-400 font-semibold">Apoyo Personalizado</li>
+        </ol>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <!-- Icon Badge -->
+          <div
+            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-100 to-amber-100 dark:from-orange-900/30 dark:to-amber-900/30 rounded-full mb-6"
+          >
+            <Heart className="w-5 h-5 text-orange-600 mr-2" />
+            <span class="text-sm font-semibold text-orange-700 dark:text-orange-300"
+              >Apoyo Personalizado</span
+            >
+          </div>
+
+          <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            Atención adaptada a tus necesidades
+          </h1>
+
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            En DiverMataró entendemos que cada persona es única. Por eso ofrecemos un servicio de
+            apoyo personalizado que se adapta a las necesidades específicas de cada individuo y su
+            familia.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/contacto/"
+              class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white font-semibold rounded-2xl hover:from-orange-700 hover:to-amber-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Solicitar información
+              <Mail className="w-5 h-5 ml-2" />
+            </a>
+            <a
+              href="#servicios"
+              class="inline-flex items-center justify-center px-8 py-4 bg-white dark:bg-gray-800 text-orange-600 dark:text-orange-400 font-semibold rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 border-2 border-orange-200 dark:border-orange-800"
+            >
+              Ver servicios
+            </a>
+          </div>
+        </div>
+
+        <!-- Image Placeholder -->
+        <div class="relative">
+          <div
+            class="aspect-square bg-gradient-to-br from-orange-400 to-amber-500 rounded-3xl shadow-2xl flex items-center justify-center"
+          >
+            <Heart className="w-32 h-32 text-white/80" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Section -->
+  <section id="servicios" class="py-32 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          Nuestros Servicios de Apoyo
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Ofrecemos una amplia gama de servicios diseñados para proporcionar el apoyo necesario en
+          cada etapa del proceso.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          servicios.map((servicio, index) => (
+            <div
+              class="group bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div
+                class={`w-16 h-16 bg-gradient-to-br ${servicio.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <servicio.icon className="w-8 h-8 text-white" />
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                {servicio.title}
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300">{servicio.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios Section -->
+  <section
+    class="py-32 bg-gradient-to-br from-gray-50 to-orange-50 dark:from-gray-800 dark:to-orange-900/10"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            ¿Por qué elegir nuestro apoyo personalizado?
+          </h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Nuestro enfoque centrado en la persona garantiza que cada intervención sea significativa
+            y efectiva.
+          </p>
+
+          <div class="space-y-4">
+            {
+              beneficios.map((beneficio, index) => (
+                <div
+                  class="flex items-start gap-4"
+                  data-aos="fade-right"
+                  data-aos-delay={index * 50}
+                >
+                  <div class="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-orange-500 to-amber-500 rounded-full flex items-center justify-center mt-1">
+                    <CheckCircle className="w-4 h-4 text-white" />
+                  </div>
+                  <p class="text-lg text-gray-700 dark:text-gray-300">{beneficio}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="relative">
+          <div
+            class="aspect-square bg-gradient-to-br from-orange-400 to-amber-500 rounded-3xl shadow-2xl flex items-center justify-center"
+          >
+            <Users className="w-32 h-32 text-white/80" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso Section -->
+  <section class="py-32 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+          ¿Cómo funciona?
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Un proceso sencillo y transparente para acceder a nuestros servicios de apoyo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {
+          [
+            {
+              step: '01',
+              title: 'Contacto inicial',
+              description: 'Ponte en contacto con nosotros para una primera consulta gratuita.',
+            },
+            {
+              step: '02',
+              title: 'Evaluación',
+              description: 'Realizamos una evaluación completa de necesidades y objetivos.',
+            },
+            {
+              step: '03',
+              title: 'Plan personalizado',
+              description: 'Diseñamos un plan de apoyo adaptado a tu situación.',
+            },
+            {
+              step: '04',
+              title: 'Seguimiento',
+              description: 'Acompañamiento continuo y ajustes según evolución.',
+            },
+          ].map((paso, index) => (
+            <div class="relative" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div class="text-6xl font-bold text-orange-200 dark:text-orange-900/50 mb-4">
+                {paso.step}
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{paso.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300">{paso.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-32 bg-gradient-to-r from-orange-600 to-amber-600 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div
+        class="absolute inset-0"
+        style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0); background-size: 40px 40px;"
+      >
+      </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        ¿Necesitas apoyo personalizado?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Estamos aquí para ayudarte. Contáctanos y te informaremos sobre cómo podemos apoyarte a ti y
+        a tu familia.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contacto/"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white text-orange-600 font-semibold rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+        >
+          Contactar ahora
+          <Phone className="w-5 h-5 ml-2" />
+        </a>
+        <a
+          href="/"
+          class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-2xl hover:bg-white hover:text-orange-600 transition-all duration-300"
+        >
+          Volver al inicio
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
