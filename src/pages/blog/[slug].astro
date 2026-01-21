@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navigation from '../../components/Navigation.astro';
-import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import { Calendar, User, Clock, Tag, Share2, X } from 'lucide-react';
 
@@ -301,6 +300,4 @@ const shareText = encodeURIComponent(entry.data.description);
       </div>
     </section>
   </main>
-
-  <Footer />
 </BaseLayout>

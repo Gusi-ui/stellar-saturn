@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navigation from '../../components/Navigation.astro';
-import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import { User, Clock, Tag, ArrowRight } from 'lucide-react';
 
@@ -249,6 +248,4 @@ const currentPosts = sortedPosts.slice(0, postsPerPage * currentPage);
       </div>
     </section>
   </main>
-
-  <Footer />
 </BaseLayout>
