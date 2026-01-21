@@ -8,14 +8,10 @@ function getSupabaseClient() {
   const supabaseServiceKey = import.meta.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!supabaseUrl || !supabaseServiceKey) {
-    const missingVars = [];
-    if (!supabaseUrl) missingVars.push('PUBLIC_SUPABASE_URL');
-    if (!supabaseServiceKey) missingVars.push('SUPABASE_SERVICE_ROLE_KEY');
-
-    throw new Error(
-      `Faltan las variables de entorno de Supabase: ${missingVars.join(', ')}. ` +
-        'Asegúrate de configurarlas en Netlify Site settings → Environment variables'
+    console.warn(
+      'Faltan las variables de entorno de Supabase. Asegúrate de configurarlas en Netlify Site settings → Environment variables'
     );
+    return null;
   }
 
   // Crear cliente de Supabase con service_role key para operaciones del servidor
@@ -29,7 +25,8 @@ function getSupabaseClient() {
 }
 
 // Exportar función para obtener el cliente (lazy initialization)
-export const supabase = getSupabaseClient();
+// Evitamos exportar una instancia creada automáticamente para no romper el build si faltan env vars
+export { getSupabaseClient };
 
 // Tipo para los datos de registro
 export interface RegistrationData {

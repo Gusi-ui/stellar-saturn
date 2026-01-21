@@ -1,8 +1,9 @@
 import type { APIRoute } from 'astro';
-import { supabase, type RegistrationData } from '../../lib/supabase';
+import { getSupabaseClient, type RegistrationData } from '../../lib/supabase';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
+    const supabase = getSupabaseClient();
     // Verificar que Supabase esté configurado
     if (!supabase) {
       return new Response(

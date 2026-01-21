@@ -5,13 +5,15 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import netlify from '@astrojs/netlify';
 
+const isBuild = process.argv.includes('build');
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://asociacionmataro.org',
   base: '/',
   trailingSlash: 'always',
   output: 'server',
-  adapter: netlify(),
+  adapter: isBuild ? netlify() : undefined,
   build: {
     format: 'directory',
   },
