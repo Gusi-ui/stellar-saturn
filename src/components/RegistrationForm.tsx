@@ -10,10 +10,10 @@ const registrationSchema = z.object({
   phone: z.string().regex(/^[0-9]{9}$/, 'El teléfono debe tener 9 dígitos'),
   functionalDiversity: z.enum(['visual', 'auditory', 'motor', 'cognitive', 'other', 'none'], {
     errorMap: () => ({ message: 'Por favor, selecciona una opción' }),
-  }),
+  } as any),
   relationship: z.enum(['person', 'family', 'professional', 'volunteer'], {
     errorMap: () => ({ message: 'Por favor, selecciona una opción' }),
-  }),
+  } as any),
   consent: z.boolean().refine((val) => val === true, 'Debes aceptar la política de privacidad'),
   newsletter: z.boolean().optional(),
 });

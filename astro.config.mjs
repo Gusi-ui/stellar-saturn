@@ -18,7 +18,7 @@ export default defineConfig({
     format: 'directory',
   },
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [/** @type {any} */(tailwindcss())]
   },
   integrations: [react()],
   markdown: {
